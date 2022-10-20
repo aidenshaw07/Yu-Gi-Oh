@@ -1,42 +1,34 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
 
-const useApiCalls = () => {
-  const [spellCardData, setSpellCardData] = useState([]);
-  const [trapCardData, setTrapCardData] = useState([]);
-  const [effectMonsterData, setEffectMonsterData] = useState([]);
+// const useApiCalls = () => {
 
-  const getSpellCardData = () => {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Spell Card")
-      .then((response) => {
-        setSpellCardData(response.data.data);
-      });
-  };
+  // const [trapCardData, setTrapCardData] = useState([]);
+  // const [effectMonsterData, setEffectMonsterData] = useState([]);
 
-  const getTrapCardData = () => {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Trap Card")
-      .then((response) => {
-        setTrapCardData(response.data.data);
-      });
-  };
+  // const getTrapCardData = () => {
+  //   axios
+  //     .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Trap Card")
+  //     .then((response) => {
+  //       setTrapCardData(response.data.data);
+  //     });
+  // };
+  // console.log(trapCardData);
 
-  const getEffectMonsterData = () => {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Effect Monster")
-      .then((response) => {
-        setEffectMonsterData(response.data.data);
-      });
-  };
-  console.log(effectMonsterData);
+  // const getEffectMonsterData = () => {
+  //   axios
+  //     .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Effect Monster")
+  //     .then((response) => {
+  //       setEffectMonsterData(response.data.data);
+  //     });
+  // };
 
-  useEffect(() => {
-    getSpellCardData();
-    getTrapCardData();
-    getEffectMonsterData();
-  }, []);
-  return { spellCardData, trapCardData, effectMonsterData };
-};
 
-export default useApiCalls;
+  // useEffect(() => {
+  //   getTrapCardData();
+  //   getEffectMonsterData();
+  // }, []);
+  // return { trapCardData, effectMonsterData };
+// };
+
+// export default useApiCalls;

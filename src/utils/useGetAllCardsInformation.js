@@ -1,11 +1,19 @@
 import React from "react";
-import useApiCalls from "./useApiCalls";
+import useSpellCardsApiCall from "./useSpellCardsApiCall";
 
 const useGetAllCardsInformation = () => {
-  const apiCalls = useApiCalls();
+  // const apiCalls = useApiCalls();
+  const spellCardsApiCall = useSpellCardsApiCall();
 
-  const { spellCardData, trapCardData, effectMonsterData } = apiCalls;
-  const renderSpellCardData = spellCardData.map((item) => {
+  // const { trapCardData, effectMonsterData } = apiCalls;
+  const { normalSpellCardData } = spellCardsApiCall;
+  const { fieldSpellCardData } = spellCardsApiCall;
+  const { equipSpellCardData } = spellCardsApiCall;
+  const { continuousSpellCardData } = spellCardsApiCall;
+  const { quickPlaySpellCardData } = spellCardsApiCall;
+  const { ritualSpellCardData } = spellCardsApiCall;
+
+  const renderNormalSpellCardData = normalSpellCardData?.map((item) => {
     return (
       <div key={item.id}>
         <h1>{item.name}</h1>
@@ -16,7 +24,7 @@ const useGetAllCardsInformation = () => {
     );
   });
 
-  const renderTrapCardData = trapCardData.map((item) => {
+  const renderFieldSpellCardData = fieldSpellCardData?.map((item) => {
     return (
       <div key={item.id}>
         <h1>{item.name}</h1>
@@ -27,7 +35,7 @@ const useGetAllCardsInformation = () => {
     );
   });
 
-  const renderEffectMonsterData = effectMonsterData.map((item) => {
+  const renderEquipSpellCardData = equipSpellCardData?.map((item) => {
     return (
       <div key={item.id}>
         <h1>{item.name}</h1>
@@ -38,7 +46,71 @@ const useGetAllCardsInformation = () => {
     );
   });
 
-  return { renderSpellCardData, renderTrapCardData, renderEffectMonsterData };
+  const renderContinuousSpellCardData = continuousSpellCardData?.map((item) => {
+    return (
+      <div key={item.id}>
+        <h1>{item.name}</h1>
+        <img src={item.card_images[0].image_url} alt="card" />
+        <p>{item.desc}</p>
+        <p>{item.type}</p>
+      </div>
+    );
+  });
+
+  const renderQuickPlaySpellCardData = quickPlaySpellCardData?.map((item) => {
+    return (
+      <div key={item.id}>
+        <h1>{item.name}</h1>
+        <img src={item.card_images[0].image_url} alt="card" />
+        <p>{item.desc}</p>
+        <p>{item.type}</p>
+      </div>
+    );
+  });
+
+  const renderRitualSpellCardData = ritualSpellCardData?.map((item) => {
+    return (
+      <div key={item.id}>
+        <h1>{item.name}</h1>
+        <img src={item.card_images[0].image_url} alt="card" />
+        <p>{item.desc}</p>
+        <p>{item.type}</p>
+      </div>
+    );
+  });
+
+  // const renderTrapCardData = trapCardData.map((item) => {
+  //   return (
+  //     <div key={item.id}>
+  //       <h1>{item.name}</h1>
+  //       <img src={item.card_images[0].image_url} alt="card" />
+  //       <p>{item.desc}</p>
+  //       <p>{item.type}</p>
+  //     </div>
+  //   );
+  // });
+
+  // const renderEffectMonsterData = effectMonsterData.map((item) => {
+  //   return (
+  //     <div key={item.id}>
+  //       <h1>{item.name}</h1>
+  //       <img src={item.card_images[0].image_url} alt="card" />
+  //       <p>{item.desc}</p>
+  //       <p>{item.type}</p>
+  //     </div>
+  //   );
+  // });
+
+  return {
+    renderNormalSpellCardData,
+    renderFieldSpellCardData,
+    renderEquipSpellCardData,
+    renderContinuousSpellCardData,
+    renderQuickPlaySpellCardData,
+    renderRitualSpellCardData
+    // renderTrapCardData,
+    // renderEffectMonsterData,
+  };
 };
 
 export default useGetAllCardsInformation;
