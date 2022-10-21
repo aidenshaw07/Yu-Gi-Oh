@@ -3,16 +3,12 @@ import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./componets/Home";
 import SpellCards from "./componets/SpellCards";
-import NormalSpellCards from "./subComponents/NormalSpellCards";
-import FieldSpellCards from "./subComponents/FieldSpellCards";
-import EquipSpellCards from "./subComponents/EquipSpellCards";
-import ContinuousSpellCards from "./subComponents/ContinuousSpellCards";
-import QuickPlaySpellCards from "./subComponents/QuickPlaySpellCards";
-import RitualSpellCards from "./subComponents/RitualSpellCards";
-import TrapCards from "./componets/TrapCards";
-import NormalTrapCards from "./subComponents/NormalTrapCards";
-import MonsterCards from "./componets/MonsterCards";
-import EffectMonsterCards from "./componets/EffectMonsterCards";
+import NormalSpellCards from "./components/NormalSpellCards";
+import FieldSpellCards from "./components/FieldSpellCards";
+import EquipSpellCards from "./components/EquipSpellCards";
+import ContinuousSpellCards from "./components/ContinuousSpellCards";
+import QuickPlaySpellCards from "./components/QuickPlaySpellCards";
+import RitualSpellCards from "./components/RitualSpellCards";
 
 const App = () => {
   return (
@@ -32,10 +28,10 @@ const App = () => {
           element={<QuickPlaySpellCards />}
         />
         <Route path="/ritual-spell-cards" element={<RitualSpellCards />} />
-        <Route path="/trap-cards" element={<TrapCards />} />
-        <Route path="/normal-trap-cards" element={<NormalTrapCards />} />
-        <Route path="/monster-cards" element={<MonsterCards />} />
-        <Route path="effect-monster-cards" element={<EffectMonsterCards />} />
+        {/* <Route path="/trap-cards" element={<TrapCards />} /> */}
+        {/* <Route path="/normal-trap-cards" element={<NormalTrapCards />} /> */}
+        {/* <Route path="/monster-cards" element={<MonsterCards />} /> */}
+        {/* <Route path="effect-monster-cards" element={<EffectMonsterCards />} /> */}
       </Routes>
     </BrowserRouter>
   );
