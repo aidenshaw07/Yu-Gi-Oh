@@ -23,7 +23,7 @@ export const useGetEquipSpellCardsData = () => {
     };
 
     try {
-      const response = await axios(options).then((response) => {
+      await axios(options).then((response) => {
         setData(response.data.data);
       });
     } catch (error) {
