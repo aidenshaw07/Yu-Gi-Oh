@@ -1,6 +1,6 @@
 import React from "react";
-import { useGetNormalSpellCardsData } from "../shared/spellCardsApi/useGetNormalSpellCardsData";
-import { mapCardsData } from "../utils/mapCardsData";
+import { useGetNormalSpellCardsData } from "../../shared/spellCardsApi/useGetNormalSpellCardsData";
+import { mapCardsData } from "../../utils/mapCardsData";
 
 const NormalSpellCards = () => {
   const {

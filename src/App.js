@@ -1,14 +1,18 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./componets/Home";
-import SpellCards from "./componets/SpellCards";
-import NormalSpellCards from "./components/NormalSpellCards";
-import FieldSpellCards from "./components/FieldSpellCards";
-import EquipSpellCards from "./components/EquipSpellCards";
-import ContinuousSpellCards from "./components/ContinuousSpellCards";
-import QuickPlaySpellCards from "./components/QuickPlaySpellCards";
-import RitualSpellCards from "./components/RitualSpellCards";
+import Home from "./categories/Home";
+import SpellCards from "./categories/SpellCards";
+import TrapCards from "./categories/TrapCards";
+import NormalSpellCards from "./components/spellCardsComponents/NormalSpellCards";
+import FieldSpellCards from "./components/spellCardsComponents/FieldSpellCards";
+import EquipSpellCards from "./components/spellCardsComponents/EquipSpellCards";
+import ContinuousSpellCards from "./components/spellCardsComponents/ContinuousSpellCards";
+import QuickPlaySpellCards from "./components/spellCardsComponents/QuickPlaySpellCards";
+import RitualSpellCards from "./components/spellCardsComponents/RitualSpellCards";
+import NormalTrapCards from "./components/trapCardsComponents/NormalTrapCards";
+import ContinuousTrapCards from "./components/trapCardsComponents/ContinuousTrapCards";
+import CounterTrapCards from "./components/trapCardsComponents/CounterTrapCards";
 
 const App = () => {
   return (
@@ -28,10 +32,10 @@ const App = () => {
           element={<QuickPlaySpellCards />}
         />
         <Route path="/ritual-spell-cards" element={<RitualSpellCards />} />
-        {/* <Route path="/trap-cards" element={<TrapCards />} /> */}
-        {/* <Route path="/normal-trap-cards" element={<NormalTrapCards />} /> */}
-        {/* <Route path="/monster-cards" element={<MonsterCards />} /> */}
-        {/* <Route path="effect-monster-cards" element={<EffectMonsterCards />} /> */}
+        <Route path="/trap-cards" element={<TrapCards />} />
+        <Route path="/normal-trap-cards" element={<NormalTrapCards />} />
+        <Route path="/continuous-trap-cards" element={<ContinuousTrapCards />} />
+        <Route path="/counter-trap-cards" element={<CounterTrapCards />} />
       </Routes>
     </BrowserRouter>
   );

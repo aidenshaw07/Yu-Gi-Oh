@@ -1,6 +1,6 @@
 import React from "react";
-import { useGetContinuousSpellCardsData } from "../shared/spellCardsApi/useGetContinuousSpellCardsData";
-import { mapCardsData } from "../utils/mapCardsData";
+import { useGetContinuousSpellCardsData } from "../../shared/spellCardsApi/useGetContinuousSpellCardsData";
+import { mapCardsData } from "../../utils/mapCardsData";
 
 const ContinuousSpellCards = () => {
   const {
@@ -10,6 +10,9 @@ const ContinuousSpellCards = () => {
   } = useGetContinuousSpellCardsData();
 
   const renderContinuousSpellCardData = mapCardsData(continuousSpellCardData);
+
+  if (isLoading) return <div>Loading...</div>;
+
   return <div>{renderContinuousSpellCardData}</div>;
 };
 

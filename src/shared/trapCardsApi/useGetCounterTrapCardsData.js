@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SPELL_CARDS_API_ENDPOINT } from "../spellCardsEndpoint";
+import { TRAP_CARDS_API_ENDPOINT } from "../trapCardsEndpoint";
 
-const endpoint = SPELL_CARDS_API_ENDPOINT.cards_api;
-const race = "Normal";
+const endpoint = TRAP_CARDS_API_ENDPOINT.cards_api;
+const race = "Counter";
 
-export const useGetNormalSpellCardsData = () => {
+export const useGetCounterTrapCardsData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

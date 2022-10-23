@@ -1,6 +1,6 @@
 import React from "react";
-import { useGetEquipSpellCardsData } from "../shared/spellCardsApi/useGetEquipSpellCardsData";
-import { mapCardsData } from "../utils/mapCardsData";
+import { useGetEquipSpellCardsData } from "../../shared/spellCardsApi/useGetEquipSpellCardsData";
+import { mapCardsData } from "../../utils/mapCardsData";
 
 const EquipSpellCards = () => {
   const {
@@ -10,6 +10,9 @@ const EquipSpellCards = () => {
   } = useGetEquipSpellCardsData();
 
   const renderEquipSpellCardData = mapCardsData(equipSpellCardData);
+
+  if (isLoading) return <div>Loading...</div>;
+
   return <div>{renderEquipSpellCardData}</div>;
 };
 

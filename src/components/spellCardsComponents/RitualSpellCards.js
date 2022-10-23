@@ -1,6 +1,6 @@
 import React from "react";
-import { useGetRitualSpellCardsData } from "../shared/spellCardsApi/useGetRitualSpellCardsData";
-import { mapCardsData } from "../utils/mapCardsData";
+import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRitualSpellCardsData";
+import { mapCardsData } from "../../utils/mapCardsData";
 
 const RitualSpellCards = () => {
   const {
@@ -10,6 +10,9 @@ const RitualSpellCards = () => {
   } = useGetRitualSpellCardsData();
 
   const renderRitualSpellCardData = mapCardsData(ritualSpellCardData);
+
+  if (isLoading) return <div>Loading...</div>;
+
   return <div>{renderRitualSpellCardData}</div>;
 };
 
