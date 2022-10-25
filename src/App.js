@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import SearchBar from "./components/SearchBar";
 import Home from "./categories/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
@@ -63,6 +64,7 @@ const App = () => {
   return (
     // <div>{renderData}</div>
     <BrowserRouter>
+        <SearchBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spell-cards" element={<SpellCards />} />

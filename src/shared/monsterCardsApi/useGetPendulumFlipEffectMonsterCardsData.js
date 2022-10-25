@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { MONSTER_CARDS_API_ENDPOINT } from "../monsterCardsEndpoint";
+import { MONSTER_CARDS_API_ENDPOINT } from "../apiEndpoints";
 
 const endpoint = MONSTER_CARDS_API_ENDPOINT.cards_api;
 const type = "Pendulum Flip Effect Monster";

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { TRAP_CARDS_API_ENDPOINT } from "../trapCardsEndpoint";
+import { TRAP_CARDS_API_ENDPOINT } from "../apiEndpoints";
 
 const endpoint = TRAP_CARDS_API_ENDPOINT.cards_api;
 const race = "Normal";

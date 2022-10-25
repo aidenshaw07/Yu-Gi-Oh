@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SPELL_CARDS_API_ENDPOINT } from "../spellCardsEndpoint";
+import { SPELL_CARDS_API_ENDPOINT } from "../apiEndpoints";
 
 const endpoint = SPELL_CARDS_API_ENDPOINT.cards_api;
 const race = "Equip";
