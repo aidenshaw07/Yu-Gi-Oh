@@ -51,7 +51,7 @@ const App = () => {
   // };
 
   // const renderData = data
-  //   .filter((item) => item.type === "Synchro Pendulum Effect Monster")
+  //   .filter((item) => item.type === "Spirit Monster")
   //   .map((item) => {
   //     return <div>{item.name}</div>;
   //   });

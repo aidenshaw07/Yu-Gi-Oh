@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGetPendulumEffectFusionMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumEffectFusionMonsterCardsData";
+import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { mapCardsData } from "../../utils/mapCardsData";
 
 const PendulumEffectFusionMonsterCards = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cardsPerPage] = useState(48);
   const {
     data: pendulumEffectFusionMonsterCardData,
     isLoading,
@@ -13,8 +16,26 @@ const PendulumEffectFusionMonsterCards = () => {
     pendulumEffectFusionMonsterCardData
   );
 
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const paginatedCurrentCards = renderPendulumEffectFusionMonsterCardData.slice(
+    indexOfFirstCard,
+    indexOfLastCard
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   if (isLoading) return <div>Loading...</div>;
-  return <div>{renderPendulumEffectFusionMonsterCardData}</div>;
+  return (
+    <div>
+      {paginatedCurrentCards}
+      <PaginateRenderedCards
+        cardsPerPage={cardsPerPage}
+        totalCards={renderPendulumEffectFusionMonsterCardData.length}
+        paginate={paginate}
+      />
+    </div>
+  );
 };
 
 export default PendulumEffectFusionMonsterCards;
