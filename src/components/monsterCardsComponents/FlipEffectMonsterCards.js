@@ -5,7 +5,7 @@ import { mapCardsData } from "../../utils/mapCardsData";
 
 const FlipEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(48);
+  const cardsPerPage = 48;
   const {
     data: flipEffectMonsterCardData,
     isLoading,
@@ -29,13 +29,11 @@ const FlipEffectMonsterCards = () => {
   return (
     <div>
       {paginatedCurrentCards}
-      <div className="childContainer">
-        <PaginateRenderedCards
-          cardsPerPage={cardsPerPage}
-          totalCards={renderFlipEffectMonsterCardData.length}
-          paginate={paginate}
-        />
-      </div>
+      <PaginateRenderedCards
+        cardsPerPage={cardsPerPage}
+        totalCards={renderFlipEffectMonsterCardData.length}
+        paginate={paginate}
+      />
     </div>
   );
 };

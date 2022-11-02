@@ -5,7 +5,7 @@ import { mapCardsData } from "../../utils/mapCardsData";
 
 const NormalMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(48);
+  const cardsPerPage = 48;
   const {
     data: normalMonsterCardData,
     isLoading,

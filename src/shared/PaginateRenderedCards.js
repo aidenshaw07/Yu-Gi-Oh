@@ -1,6 +1,10 @@
 import React from "react";
 
-const PaginateRenderedCards = ({ cardsPerPage, totalCards, paginate }) => {
+const PaginateRenderedCards = ({
+  cardsPerPage,
+  totalCards,
+  paginate,
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalCards / cardsPerPage); i++) {
@@ -15,7 +19,11 @@ const PaginateRenderedCards = ({ cardsPerPage, totalCards, paginate }) => {
     </div>
   ));
 
-  return <div>{renderPageNumbers}</div>;
+  return (
+    <div>
+      {renderPageNumbers}
+    </div>
+  );
 };
 
 export default PaginateRenderedCards;

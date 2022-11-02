@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import axios from "axios";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
@@ -38,6 +38,8 @@ import SynchroPendulumEffectMonsterCards from "./components/monsterCardsComponen
 import SynchroTunerMonsterCards from "./components/monsterCardsComponents/SynchroTunerMonsterCards";
 import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards";
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
+import Logo from "./components/Logo";
+import Banner from "./components/Banner";
 
 const App = () => {
   // const [data, setData] = useState([]);
@@ -51,7 +53,7 @@ const App = () => {
   // };
 
   // const renderData = data
-  //   .filter((item) => item.type === "Spirit Monster")
+  //   .filter((item) => item.name === "Slifer the Sky Dragon")
   //   .map((item) => {
   //     return <div>{item.name}</div>;
   //   });
@@ -64,7 +66,9 @@ const App = () => {
   return (
     // <div>{renderData}</div>
     <BrowserRouter>
-        <SearchBar />
+      <Logo />
+      <Banner />
+      <SearchBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spell-cards" element={<SpellCards />} />
