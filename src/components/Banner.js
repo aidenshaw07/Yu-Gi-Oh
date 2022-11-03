@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
-import "./bannerStyle.scss";
+import "../styles/bannerStyle.scss";
 
 const Banner = () => {
   const [data, setData] = useState([]);
@@ -11,19 +11,20 @@ const Banner = () => {
       "https://db.ygoprodeck.com/api/v7/cardinfo.php?"
     );
     setData(response.data.data);
-    console.log(response.data.data);
   };
 
-  const renderTopFiveCardsData = data.map((item) => {
-    if (
-      item.name === "Right Arm of the Forbidden One" ||
-      item.name === "Exodia the Forbidden One" ||
-      item.name === "Left Leg of the Forbidden One" ||
-      item.name === "Left Arm of the Forbidden One" ||
-      item.name === "Right Leg of the Forbidden One"
-    ) {
+  const renderTopFiveCardsData = data
+    .filter(
+      (item) =>
+        item.name === "Right Arm of the Forbidden One" ||
+        item.name === "Left Leg of the Forbidden One" ||
+        item.name === "Left Arm of the Forbidden One" ||
+        item.name === "Exodia the Forbidden One" ||
+        item.name === "Right Leg of the Forbidden One"
+    )
+    .map((item, i) => {
       return (
-        <div className="map-banner-container">
+        <div key={i} className="map-banner-container">
           <img
             className="map-banner-img-container"
             src={item.card_images[0].image_url}
@@ -31,19 +32,20 @@ const Banner = () => {
           />
         </div>
       );
-    }
-  });
+    });
 
-  const renderBottomFiveCardsData = data.map((item) => {
-    if (
-      item.name === "Dark Magician" ||
-      item.name === "Blue-Eyes White Dragon" ||
-      item.name === "Slifer the Sky Dragon" ||
-      item.name === "The Winged Dragon of Ra" ||
-      item.name === "Obelisk the Tormentor"
-    ) {
+  const renderBottomFiveCardsData = data
+    .filter(
+      (item) =>
+        item.name === "Dark Magician" ||
+        item.name === "Blue-Eyes White Dragon" ||
+        item.name === "Red-Eyes Black Dragon" ||
+        item.name === "Dark Paladin" ||
+        item.name === "Dark Magician Girl"
+    )
+    .map((item, i) => {
       return (
-        <div className="map-banner-container">
+        <div key={i} className="map-banner-container">
           <img
             className="map-banner-img-container"
             src={item.card_images[0].image_url}
@@ -51,8 +53,7 @@ const Banner = () => {
           />
         </div>
       );
-    }
-  });
+    });
 
   useEffect(() => {
     getData();
@@ -63,8 +64,9 @@ const Banner = () => {
       <ReactPlayer
         playing={true}
         muted={true}
+        loop={true}
         controls
-        width
+        width="100%"
         url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
       />
       <div className="banner-container">{renderBottomFiveCardsData}</div>

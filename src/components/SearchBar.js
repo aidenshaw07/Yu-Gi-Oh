@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../styles/searchBarStyle.scss";
 
 const SearchBar = () => {
   const [searchedCardData, setSearchedCardData] = useState([]);
@@ -37,10 +38,10 @@ const SearchBar = () => {
   }, [searchCardName]);
 
   return (
-    <div>
+    <div className="searchbar-container-asd">
       <input
         type="text"
-        className="input"
+        className="searchbar-input"
         value={searchCardName}
         onChange={(event) => setSearchCardName(event.target.value)}
         placeholder="Search For A Movie"
