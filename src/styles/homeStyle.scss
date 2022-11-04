@@ -1,4 +1,4 @@
-.home-content {
+.home-container {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -7,7 +7,8 @@
   padding: 5rem 0 2rem 0;
   background-image: url(../assets/egyptiangods.jpg);
   background-size: 100% 100%;
-  .child-container {
+  .link-content {
+    text-decoration: none;
     width: 11rem;
     height: 16rem;
     background-image: url(../assets/yugioh1.webp);
@@ -23,15 +24,12 @@
     -webkit-box-shadow: 11px 10px 14px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 11px 10px 14px 0px rgba(0, 0, 0, 0.75);
     transition: transform 1s, filter 1s ease-in-out;
-  filter: blur(2px);
-  transform: scale(0.8);
-  filter: brightness(70%);
-  &:hover {
-    transform: scale(1);
-    filter: brightness(150%);
+    filter: blur(2px);
+    transform: scale(0.8);
+    filter: brightness(70%);
+    &:hover {
+      transform: scale(1);
+      filter: brightness(150%);
+    }
   }
-  }
-}
-.link-content {
-  text-decoration: none;
 }

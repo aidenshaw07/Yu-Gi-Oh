@@ -1,27 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/spellCardsStyle.scss";
 
 const SpellCards = () => {
   return (
-    <div className="container">
-      <Link to="/spell-cards/normal-spell-cards">
-        <div className="childContainer">Normal Spell Cards</div>
-      </Link>
-      <Link to="/spell-cards/field-spell-cards">
-        <div className="childContainer">Field Spell Cards</div>
-      </Link>
-      <Link to="/spell-cards/equip-spell-cards">
-        <div className="childContainer">Equip Spell Cards</div>
-      </Link>
-      <Link to="/spell-cards/continuous-spell-cards">
-        <div className="childContainer">Continuous Spell Cards</div>
-      </Link>
-      <Link to="/spell-cards/quick-play-spell-cards">
-        <div className="childContainer">Quick Play Spell Cards</div>
-      </Link>
-      <Link to="/spell-cards/ritual-spell-cards">
-        <div className="childContainer">Ritual Spell Cards</div>
-      </Link>
+    <div className="spell-cards-container">
+      <div className="spell-cards-header">Spell Cards Categories</div>
+      <div className="spell-cards-child-container">
+        <Link className="spell-cards-link" to="/spell-cards/normal-spell-cards">
+          <h2>
+            Normal
+            <br /> Spell Cards
+          </h2>
+        </Link>
+        <Link className="spell-cards-link" to="/spell-cards/field-spell-cards">
+          <h2>
+            Field
+            <br /> Spell Cards
+          </h2>
+        </Link>
+        <Link className="spell-cards-link" to="/spell-cards/equip-spell-cards">
+          <h2>
+            Equip
+            <br /> Spell Cards
+          </h2>
+        </Link>
+        <Link
+          className="spell-cards-link"
+          to="/spell-cards/continuous-spell-cards"
+        >
+          <h2>
+            Continuous
+            <br /> Spell Cards
+          </h2>
+        </Link>
+        <Link
+          className="spell-cards-link"
+          to="/spell-cards/quick-play-spell-cards"
+        >
+          <h2>
+            Quick Play
+            <br /> Spell Cards
+          </h2>
+        </Link>
+        <Link className="spell-cards-link" to="/spell-cards/ritual-spell-cards">
+          <h2>
+            Ritual
+            <br /> Spell Cards
+          </h2>
+        </Link>
+      </div>
     </div>
   );
 };
