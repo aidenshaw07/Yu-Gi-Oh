@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const EffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const EffectMonsterCards = () => {
     error,
   } = useGetEffectMonsterCardsData();
 
-  const renderEffectMonsterCardData = mapCardsData(effectMonsterCardData);
+  const renderEffectMonsterCardData = mapCardsImages(effectMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

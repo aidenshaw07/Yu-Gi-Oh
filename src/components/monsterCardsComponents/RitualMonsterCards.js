@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetRitualMonsterCardsData } from "../../shared/monsterCardsApi/useGetRitualMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const RitualMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const RitualMonsterCards = () => {
     error,
   } = useGetRitualMonsterCardsData();
 
-  const renderRitualMonsterCardData = mapCardsData(ritualMonsterCardData);
+  const renderRitualMonsterCardData = mapCardsImages(ritualMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

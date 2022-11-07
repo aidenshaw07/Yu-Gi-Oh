@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRitualSpellCardsData";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const RitualSpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const RitualSpellCards = () => {
     error,
   } = useGetRitualSpellCardsData();
 
-  const renderRitualSpellCardData = mapCardsData(ritualSpellCardData);
+  const renderRitualSpellCardData = mapCardsImages(ritualSpellCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

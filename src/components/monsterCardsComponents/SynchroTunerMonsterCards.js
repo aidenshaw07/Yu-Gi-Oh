@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetSynchroTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroTunerMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const SynchroTunerMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const SynchroTunerMonsterCards = () => {
     error,
   } = useGetSynchroTunerMonsterCardsData();
 
-  const renderSynchroTunerMonsterCardData = mapCardsData(
+  const renderSynchroTunerMonsterCardData = mapCardsImages(
     synchroTunerMonsterCardData
   );
 

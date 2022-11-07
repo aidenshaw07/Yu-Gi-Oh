@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetPendulumTunerEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumTunerEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const PendulumTunerEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const PendulumTunerEffectMonsterCards = () => {
     error,
   } = useGetPendulumTunerEffectMonsterCardsData();
 
-  const renderPendulumTunerEffectMonsterCardData = mapCardsData(
+  const renderPendulumTunerEffectMonsterCardData = mapCardsImages(
     pendulumTunerEffectMonsterCardData
   );
 

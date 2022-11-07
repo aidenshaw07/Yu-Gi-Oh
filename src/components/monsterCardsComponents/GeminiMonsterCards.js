@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetGeminiMonsterCardsData } from "../../shared/monsterCardsApi/useGetGeminiMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const GeminiMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const GeminiMonsterCards = () => {
     error,
   } = useGetGeminiMonsterCardsData();
 
-  const renderGeminiMonsterCardData = mapCardsData(geminiMonsterCardData);
+  const renderGeminiMonsterCardData = mapCardsImages(geminiMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

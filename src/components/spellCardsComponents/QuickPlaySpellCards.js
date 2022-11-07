@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const QuickPlaySpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const QuickPlaySpellCards = () => {
     error,
   } = useGetQuickPlaySpellCardsData();
 
-  const renderQuickPlaySpellCardData = mapCardsData(quickPlaySpellCardData);
+  const renderQuickPlaySpellCardData = mapCardsImages(quickPlaySpellCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

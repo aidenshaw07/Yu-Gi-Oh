@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetContinuousTrapCardsData } from "../../shared/trapCardsApi/useGetContinuousTrapCardsData";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const ContinuousTrapCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const ContinuousTrapCards = () => {
     error,
   } = useGetContinuousTrapCardsData();
 
-  const renderContinuousTrapCardData = mapCardsData(continuousTrapCardData);
+  const renderContinuousTrapCardData = mapCardsImages(continuousTrapCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

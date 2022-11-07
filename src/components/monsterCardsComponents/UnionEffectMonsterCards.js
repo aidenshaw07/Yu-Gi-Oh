@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetUnionEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetUnionEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const UnionEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const UnionEffectMonsterCards = () => {
     error,
   } = useGetUnionEffectMonsterCardsData();
 
-  const renderUnionEffectMonsterCardData = mapCardsData(
+  const renderUnionEffectMonsterCardData = mapCardsImages(
     unionEffectMonsterCardData
   );
 

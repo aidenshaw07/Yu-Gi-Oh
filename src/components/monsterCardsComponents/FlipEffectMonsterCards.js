@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetFlipEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetFlipEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const FlipEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const FlipEffectMonsterCards = () => {
     error,
   } = useGetFlipEffectMonsterCardsData();
 
-  const renderFlipEffectMonsterCardData = mapCardsData(
+  const renderFlipEffectMonsterCardData = mapCardsImages(
     flipEffectMonsterCardData
   );
 

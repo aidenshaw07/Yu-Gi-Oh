@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetFieldSpellCardsData } from "../../shared/spellCardsApi/useGetFieldSpellCardsData";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const FieldSpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const FieldSpellCards = () => {
     error,
   } = useGetFieldSpellCardsData();
 
-  const renderFieldSpellCardData = mapCardsData(fieldSpellCardData);
+  const renderFieldSpellCardData = mapCardsImages(fieldSpellCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

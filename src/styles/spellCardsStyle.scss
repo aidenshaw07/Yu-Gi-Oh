@@ -1,15 +1,17 @@
 .spell-cards-container {
   background-image: url(../assets/Slifer.jpg);
   background-size: 100%;
-  height: 210vh;
+  height: 160vh;
   .spell-cards-child-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 5rem 25rem;
+    padding: 5rem;
     .spell-cards-link {
       text-decoration: none;
+      margin: 0 6rem;
       width: 15rem;
       height: 25rem;
       margin-bottom: 3rem;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetNormalTrapCardsData } from "../../shared/trapCardsApi/useGetNormalTrapCardsData";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const NormalTrapCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const NormalTrapCards = () => {
     error,
   } = useGetNormalTrapCardsData();
 
-  const renderNormalTrapCardData = mapCardsData(normalTrapCardData);
+  const renderNormalTrapCardData = mapCardsImages(normalTrapCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

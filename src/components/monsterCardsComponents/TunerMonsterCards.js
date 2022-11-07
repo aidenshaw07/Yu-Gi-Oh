@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetTunerMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const TunerMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const TunerMonsterCards = () => {
     error,
   } = useGetTunerMonsterCardsData();
 
-  const renderTunerMonsterCardData = mapCardsData(tunerMonsterCardData);
+  const renderTunerMonsterCardData = mapCardsImages(tunerMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

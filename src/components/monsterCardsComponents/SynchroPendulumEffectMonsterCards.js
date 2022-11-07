@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetSynchroPendulumEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroPendulumEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const SynchroPendulumEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const SynchroPendulumEffectMonsterCards = () => {
     error,
   } = useGetSynchroPendulumEffectMonsterCardsData();
 
-  const renderSynchroPendulumEffectMonsterCardData = mapCardsData(
+  const renderSynchroPendulumEffectMonsterCardData = mapCardsImages(
     synchroPendulumEffectMonsterCardData
   );
 

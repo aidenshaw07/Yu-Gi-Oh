@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetNormalTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetNormalTunerMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const NormalTunerMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const NormalTunerMonsterCards = () => {
     error,
   } = useGetNormalTunerMonsterCardsData();
 
-  const renderNormalTunerMonsterCardData = mapCardsData(
+  const renderNormalTunerMonsterCardData = mapCardsImages(
     normalTunerMonsterCardData
   );
 

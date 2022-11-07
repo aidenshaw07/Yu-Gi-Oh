@@ -14,10 +14,10 @@ const Header = () => {
         <Link className="link-content" to="/">
           <h3 className="header-text-area">Home</h3>
         </Link>
-        <SearchBar />
         <Link className="link-content" to="/">
           <h3 className="header-text-area">How To Play!</h3>
         </Link>
+        <SearchBar />
       </div>
     </div>
   );

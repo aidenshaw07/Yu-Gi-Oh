@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetLinkMonsterCardsData } from "../../shared/monsterCardsApi/useGetLinkMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const LinkMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const LinkMonsterCards = () => {
     error,
   } = useGetLinkMonsterCardsData();
 
-  const renderLinkMonsterCardData = mapCardsData(linkMonsterCardData);
+  const renderLinkMonsterCardData = mapCardsImages(linkMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

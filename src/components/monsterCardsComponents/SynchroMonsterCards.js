@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetSynchroMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const SynchroMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const SynchroMonsterCards = () => {
     error,
   } = useGetSynchroMonsterCardsData();
 
-  const renderSynchroMonsterCardData = mapCardsData(synchroMonsterCardData);
+  const renderSynchroMonsterCardData = mapCardsImages(synchroMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

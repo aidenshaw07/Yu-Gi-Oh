@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetPendulumFlipEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumFlipEffectMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const PendulumFlipEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const PendulumFlipEffectMonsterCards = () => {
     error,
   } = useGetPendulumFlipEffectMonsterCardsData();
 
-  const renderPendulumFlipEffectMonsterCardData = mapCardsData(
+  const renderPendulumFlipEffectMonsterCardData = mapCardsImages(
     pendulumFlipEffectMonsterCardData
   );
 

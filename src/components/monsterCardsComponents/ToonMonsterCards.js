@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetToonMonsterCardsData } from "../../shared/monsterCardsApi/useGetToonMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const ToonMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const ToonMonsterCards = () => {
     error,
   } = useGetToonMonsterCardsData();
 
-  const renderToonMonsterCardData = mapCardsData(toonMonsterCardData);
+  const renderToonMonsterCardData = mapCardsImages(toonMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

@@ -1,0 +1,27 @@
+.mapped-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 35rem;
+    border: 5px solid red;
+    margin: 0.5rem;
+}
+
+.map-cards-image {
+    border:3px solid pink;
+    width: 18rem;
+    height: 30rem;
+}
+
+.mapped-cards-names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 3px solid blue;
+    width: 20rem;
+    height: 5rem;
+}

@@ -44,7 +44,7 @@ const SearchBar = () => {
         className="searchbar-input"
         value={searchCardName}
         onChange={(event) => setSearchCardName(event.target.value)}
-        placeholder="Search For A Movie"
+        placeholder="Search For A Card"
       />
       {renderSearchedCardData}
     </div>

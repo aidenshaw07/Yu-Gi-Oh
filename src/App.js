@@ -38,6 +38,8 @@ import SynchroTunerMonsterCards from "./components/monsterCardsComponents/Synchr
 import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards";
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
 import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 const App = () => {
   // const [data, setData] = useState([]);
@@ -64,6 +66,7 @@ const App = () => {
   return (
     // <div>{renderData}</div>
     <BrowserRouter>
+    <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -195,6 +198,7 @@ const App = () => {
           element={<XYZPendulumEffectMonsterCards />}
         />
       </Routes>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 };

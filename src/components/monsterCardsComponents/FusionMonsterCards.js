@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetFusionMonsterCardsData } from "../../shared/monsterCardsApi/useGetFusionMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const FusionMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const FusionMonsterCards = () => {
     error,
   } = useGetFusionMonsterCardsData();
 
-  const renderFusionMonsterCardData = mapCardsData(fusionMonsterCardData);
+  const renderFusionMonsterCardData = mapCardsImages(fusionMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetXYZMonsterCardsData } from "../../shared/monsterCardsApi/useGetXYZMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const XYZMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const XYZMonsterCards = () => {
     error,
   } = useGetXYZMonsterCardsData();
 
-  const renderXYZMonsterCardData = mapCardsData(xyzMonsterCardData);
+  const renderXYZMonsterCardData = mapCardsImages(xyzMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

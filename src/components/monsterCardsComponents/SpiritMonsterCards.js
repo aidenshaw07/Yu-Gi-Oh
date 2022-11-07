@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGetSpiritMonsterCardsData } from "../../shared/monsterCardsApi/useGetSpiritMonsterCardsData";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
-import { mapCardsData } from "../../utils/mapCardsData";
+import { mapCardsImages } from "../../utils/mapCardsImages";
 
 const SpiritMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +12,7 @@ const SpiritMonsterCards = () => {
     error,
   } = useGetSpiritMonsterCardsData();
 
-  const renderSpiritMonsterCardData = mapCardsData(spiritMonsterCardData);
+  const renderSpiritMonsterCardData = mapCardsImages(spiritMonsterCardData);
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
