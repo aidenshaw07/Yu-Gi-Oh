@@ -2,38 +2,44 @@ import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetContinuousTrapCardsData } from "../../shared/trapCardsApi/useGetContinuousTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/paginateRenderedCards.scss";
+import { Pagination } from "antd";
 
 const ContinuousTrapCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: continuousTrapCardData,
     isLoading,
     error,
+    total
   } = useGetContinuousTrapCardsData();
 
   const renderContinuousTrapCardData = mapCardsImages(continuousTrapCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderContinuousTrapCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderContinuousTrapCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

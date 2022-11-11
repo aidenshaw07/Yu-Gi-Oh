@@ -8,79 +8,79 @@ const MonsterCards = () => {
       <div className="monster-cards-header">Main Deck Types</div>
       <div className="monster-cards-child-container">
         <Link className="monster-cards-link" to="/monster-cards/effect-monster-cards">
-          <div className="font-class">Effect<br /> Monster Cards</div>
+          <h2>Effect<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/flip-effect-monster-cards">
-          <div className="font-class">Flip Effect<br /> Monster Cards</div>
+          <h2>Flip Effect<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/gemini-monster-cards">
-          <div className="font-class">Gemini<br /> Monster Cards</div>
+          <h2>Gemini<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/normal-monster-cards">
-          <div className="font-class">Normal<br /> Monster Cards</div>
+          <h2>Normal<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/normal-tuner-monster-cards">
-          <div className="font-class">Normal Tuner<br /> Monster Cards</div>
+          <h2>Normal Tuner<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/pendulum-effect-monster-cards">
-          <div className="font-class">Pendulum Effect<br /> Monster Cards</div>
+          <h2>Pendulum Effect<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/pendulum-flip-effect-monster-cards">
-          <div className="font-class">Pendulum Flip Effect<br /> Monster Cards</div>
+          <h2>Pendulum Flip Effect<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/pendulum-tuner-effect-monster-cards">
-          <div className="font-class">
+          <h2>
             Pendulum Tuner Effect<br /> Monster Cards
-          </div>
+          </h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/ritual-effect-monster-cards">
-          <div className="font-class">Ritual Effect<br /> Monster Cards</div>
+          <h2>Ritual Effect<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/ritual-monster-cards">
-          <div className="font-class">Ritual<br /> Monster Cards</div>
+          <h2>Ritual<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/spirit-monster-cards">
-          <div className="font-class">Spirit<br /> Monster Cards</div>
+          <h2>Spirit<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/toon-monster-cards">
-          <div className="font-class">Toon<br /> Monster Cards</div>
+          <h2>Toon<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/tuner-monster-cards">
-          <div className="font-class">Tuner<br /> Monster Cards</div>
+          <h2>Tuner<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/union-effect-monster-cards">
-          <div className="font-class">Union-Effect<br /> Monster Cards</div>
+          <h2>Union-Effect<br /> Monster Cards</h2>
         </Link>
       </div>
       <div className="monster-cards-header">Extra Deck Types</div>
       <div className="monster-cards-child-container">
         <Link className="monster-cards-link" to="/monster-cards/fusion-monster-cards">
-          <div className="font-class">Fusion<br /> Monster Cards</div>
+          <h2>Fusion<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/pendulum-effect-fusion-monster-cards">
-          <div className="font-class">
+          <h2>
             Pendulum Effect Fusion<br /> Monster Cards
-          </div>
+          </h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/link-monster-cards">
-          <div className="font-class">Link<br /> Monster Cards</div>
+          <h2>Link<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/synchro-monster-cards">
-          <div className="font-class">Synchro<br /> Monster Cards</div>
+          <h2>Synchro<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/synchro-pendulum-effect-monster-cards">
-          <div className="font-class">
+          <h2>
             Synchro Pendulum Effect<br /> Monster Cards
-          </div>
+          </h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/synchro-tuner-monster-cards">
-          <div className="font-class">Synchro Tuner<br /> Monster Cards</div>
+          <h2>Synchro Tuner<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/xyz-monster-cards">
-          <div className="font-class">XYZ<br /> Monster Cards</div>
+          <h2>XYZ<br /> Monster Cards</h2>
         </Link>
         <Link className="monster-cards-link" to="/monster-cards/xyz-pendulum-effect-monster-cards">
-          <div className="font-class">XYZ Pendulum Effect<br /> Monster Cards</div>
+          <h2>XYZ Pendulum Effect<br /> Monster Cards</h2>
         </Link>
       </div>
     </div>

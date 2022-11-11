@@ -1,36 +1,41 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetCounterTrapCardsData } from "../../shared/trapCardsApi/useGetCounterTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/paginateRenderedCards.scss";
+import { Pagination } from "antd";
 
 const CounterTrapCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: counterTrapCardData,
     isLoading,
     error,
+    total
   } = useGetCounterTrapCardsData();
 
   const renderCounterTrapCardData = mapCardsImages(counterTrapCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderCounterTrapCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
   return (
     <>
-      <div>{paginatedCurrentCards}</div>
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderCounterTrapCardData.length}
-        paginate={paginate}
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
     </>
   );

@@ -2,38 +2,44 @@ import React, { useState } from "react";
 import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/paginateRenderedCards.scss";
+import { Pagination } from "antd";
 
 const QuickPlaySpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: quickPlaySpellCardData,
     isLoading,
     error,
+    total
   } = useGetQuickPlaySpellCardsData();
 
   const renderQuickPlaySpellCardData = mapCardsImages(quickPlaySpellCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderQuickPlaySpellCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderQuickPlaySpellCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

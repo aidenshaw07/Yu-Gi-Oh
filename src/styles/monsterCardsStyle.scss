@@ -10,6 +10,7 @@
         padding: 5rem;
         .monster-cards-link {
           text-decoration: none;
+          text-align: center;
           margin: 0 4.5rem;
           width: 15rem;
           height: 25rem;
@@ -42,13 +43,4 @@
     padding: 2rem;
     text-align: center;
     font-size: 3rem;
-  }
-
-  .font-class {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 10rem;
-    font-size: 1.5rem;
   }

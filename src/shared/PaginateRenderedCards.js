@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/paginateRenderedCards.scss";
 
 const PaginateRenderedCards = ({
   cardsPerPage,

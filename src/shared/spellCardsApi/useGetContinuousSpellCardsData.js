@@ -9,6 +9,7 @@ export const useGetContinuousSpellCardsData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [total, setTotal] = useState("");
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -25,6 +26,7 @@ export const useGetContinuousSpellCardsData = () => {
     try {
       await axios(options).then((response) => {
         setData(response.data.data);
+        setTotal(response.data.data.length);
       });
     } catch (error) {
       setError(error);
@@ -39,5 +41,5 @@ export const useGetContinuousSpellCardsData = () => {
     return () => {};
   }, []);
 
-  return { data, isLoading, error };
+  return { data, isLoading, error, total };
 };

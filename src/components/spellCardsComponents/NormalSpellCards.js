@@ -1,39 +1,52 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
 import { useGetNormalSpellCardsData } from "../../shared/spellCardsApi/useGetNormalSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/renderedMappedCards.scss";
-
+import "../../styles/paginateRenderedCards.scss";
+import { Pagination } from "antd";
+import Modal from "../Modal";
 
 const NormalSpellCards = () => {
+  const [openModal, setOpenModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: normalSpellCardData,
     isLoading,
     error,
+    total,
   } = useGetNormalSpellCardsData();
 
   const renderNormalSpellCardData = mapCardsImages(normalSpellCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderNormalSpellCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
-      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderNormalSpellCardData.length}
-        paginate={paginate}
+      {openModal && <Modal closeModal={setOpenModal} />}
+      <div
+        onClick={() => {
+          setOpenModal(true);
+        }}
+        className="rendered-mapped-cards"
+      >
+        {paginatedCurrentCards}
+      </div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
     </>
   );
