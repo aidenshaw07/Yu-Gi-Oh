@@ -1,40 +1,47 @@
 import React, { useState } from "react";
 import { useGetPendulumEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumEffectMonsterCardsData";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
+import { Pagination } from "antd";
 
 const PendulumEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: pendulumEffectMonsterCardData,
     isLoading,
     error,
+    total,
   } = useGetPendulumEffectMonsterCardsData();
 
   const renderPendulumEffectMonsterCardData = mapCardsImages(
     pendulumEffectMonsterCardData
   );
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderPendulumEffectMonsterCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderPendulumEffectMonsterCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

@@ -1,40 +1,48 @@
 import React, { useState } from "react";
 import { useGetUnionEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetUnionEffectMonsterCardsData";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
+import { Pagination } from "antd";
 
 const UnionEffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: unionEffectMonsterCardData,
     isLoading,
     error,
+    total,
   } = useGetUnionEffectMonsterCardsData();
 
   const renderUnionEffectMonsterCardData = mapCardsImages(
     unionEffectMonsterCardData
   );
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderUnionEffectMonsterCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
+
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderUnionEffectMonsterCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

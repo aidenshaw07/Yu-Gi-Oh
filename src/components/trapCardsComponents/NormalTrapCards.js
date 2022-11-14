@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetNormalTrapCardsData } from "../../shared/trapCardsApi/useGetNormalTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const NormalTrapCards = () => {
@@ -12,7 +13,7 @@ const NormalTrapCards = () => {
     data: normalTrapCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetNormalTrapCardsData();
 
   const renderNormalTrapCardData = mapCardsImages(normalTrapCardData);

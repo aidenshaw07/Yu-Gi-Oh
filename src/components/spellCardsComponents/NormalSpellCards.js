@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useGetNormalSpellCardsData } from "../../shared/spellCardsApi/useGetNormalSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 import Modal from "../Modal";
 

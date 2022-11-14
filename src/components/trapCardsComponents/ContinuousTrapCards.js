@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetContinuousTrapCardsData } from "../../shared/trapCardsApi/useGetContinuousTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const ContinuousTrapCards = () => {
@@ -12,7 +13,7 @@ const ContinuousTrapCards = () => {
     data: continuousTrapCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetContinuousTrapCardsData();
 
   const renderContinuousTrapCardData = mapCardsImages(continuousTrapCardData);

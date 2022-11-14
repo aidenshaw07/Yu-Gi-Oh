@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRitualSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const RitualSpellCards = () => {
@@ -12,7 +13,7 @@ const RitualSpellCards = () => {
     data: ritualSpellCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetRitualSpellCardsData();
 
   const renderRitualSpellCardData = mapCardsImages(ritualSpellCardData);

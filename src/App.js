@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 import axios from "axios";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./categories/Home";
+import Home from "./components/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
 import NormalSpellCards from "./components/spellCardsComponents/NormalSpellCards";
@@ -66,8 +66,7 @@ const App = () => {
   return (
     // <div>{renderData}</div>
     <BrowserRouter>
-    <ScrollToTop />
-      <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spell-cards" element={<SpellCards />} />

@@ -9,6 +9,7 @@ export const useGetToonMonsterCardsData = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [total, setTotal] = useState(0);
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -25,6 +26,7 @@ export const useGetToonMonsterCardsData = () => {
     try {
       await axios(options).then((response) => {
         setData(response.data.data);
+        setTotal(response.data.data.length);
       });
     } catch (error) {
       setError(error);
@@ -39,5 +41,5 @@ export const useGetToonMonsterCardsData = () => {
     return () => {};
   }, []);
 
-  return { data, isLoading, error };
+  return { data, isLoading, error, total };
 };

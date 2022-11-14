@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetContinuousSpellCardsData } from "../../shared/spellCardsApi/useGetContinuousSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const ContinuousSpellCards = () => {
@@ -12,7 +13,7 @@ const ContinuousSpellCards = () => {
     data: continuousSpellCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetContinuousSpellCardsData();
 
   const renderContinuousSpellCardData = mapCardsImages(continuousSpellCardData);

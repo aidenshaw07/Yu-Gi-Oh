@@ -1,14 +1,10 @@
 import React from "react";
-import "../styles/paginateRenderedCards.scss";
+import "../styles/pagination.scss";
 
-const PaginateRenderedCards = ({
-  cardsPerPage,
-  totalCards,
-  paginate,
-}) => {
+const PaginateRenderedCards = ({ postPerPage, totalCards, paginate }) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalCards / cardsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalCards / postPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -20,11 +16,7 @@ const PaginateRenderedCards = ({
     </div>
   ));
 
-  return (
-    <div>
-      {renderPageNumbers}
-    </div>
-  );
+  return <div>{renderPageNumbers}</div>;
 };
 
 export default PaginateRenderedCards;

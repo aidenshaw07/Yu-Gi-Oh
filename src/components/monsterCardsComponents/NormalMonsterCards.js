@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { useGetNormalMonsterCardsData } from "../../shared/monsterCardsApi/useGetNormalMonsterCardsData";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
+import { Pagination } from "antd";
 
 const NormalMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: normalMonsterCardData,
     isLoading,
     error,
+    total,
   } = useGetNormalMonsterCardsData();
 
   const renderNormalMonsterCardData = mapCardsImages(normalMonsterCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderNormalMonsterCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
@@ -25,14 +29,19 @@ const NormalMonsterCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderNormalMonsterCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

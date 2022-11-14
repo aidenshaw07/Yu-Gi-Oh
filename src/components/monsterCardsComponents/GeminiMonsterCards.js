@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { useGetGeminiMonsterCardsData } from "../../shared/monsterCardsApi/useGetGeminiMonsterCardsData";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
+import { Pagination } from "antd";
 
 const GeminiMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 48;
+  const postPerPage = 48;
   const {
     data: geminiMonsterCardData,
     isLoading,
     error,
+    total,
   } = useGetGeminiMonsterCardsData();
 
   const renderGeminiMonsterCardData = mapCardsImages(geminiMonsterCardData);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const indexOfLastCard = currentPage * postPerPage;
+  const indexOfFirstCard = indexOfLastCard - postPerPage;
   const paginatedCurrentCards = renderGeminiMonsterCardData.slice(
     indexOfFirstCard,
     indexOfLastCard
@@ -25,14 +29,19 @@ const GeminiMonsterCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <div>
-      {paginatedCurrentCards}
-      <PaginateRenderedCards
-        cardsPerPage={cardsPerPage}
-        totalCards={renderGeminiMonsterCardData.length}
-        paginate={paginate}
+    <>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
+      <Pagination
+        className="pagination"
+        onChange={(value) => setCurrentPage(value)}
+        pageSize={postPerPage}
+        total={total}
+        current={currentPage}
+        showQuickJumper
+        onShowSizeChange={postPerPage}
+        showSizeChanger={false}
       />
-    </div>
+    </>
   );
 };
 

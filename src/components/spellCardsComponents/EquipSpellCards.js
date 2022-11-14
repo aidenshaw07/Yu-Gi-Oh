@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetEquipSpellCardsData } from "../../shared/spellCardsApi/useGetEquipSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const EquipSpellCards = () => {
@@ -12,7 +13,7 @@ const EquipSpellCards = () => {
     data: equipSpellCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetEquipSpellCardsData();
 
   const renderEquipSpellCardData = mapCardsImages(equipSpellCardData);

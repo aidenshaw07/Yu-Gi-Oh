@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import PaginateRenderedCards from "../../shared/PaginateRenderedCards";
+
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const QuickPlaySpellCards = () => {
@@ -12,7 +13,7 @@ const QuickPlaySpellCards = () => {
     data: quickPlaySpellCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetQuickPlaySpellCardsData();
 
   const renderQuickPlaySpellCardData = mapCardsImages(quickPlaySpellCardData);

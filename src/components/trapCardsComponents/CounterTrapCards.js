@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useGetCounterTrapCardsData } from "../../shared/trapCardsApi/useGetCounterTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
-import "../../styles/paginateRenderedCards.scss";
+import "../../styles/renderedMappedCards.scss";
+import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const CounterTrapCards = () => {
@@ -11,7 +12,7 @@ const CounterTrapCards = () => {
     data: counterTrapCardData,
     isLoading,
     error,
-    total
+    total,
   } = useGetCounterTrapCardsData();
 
   const renderCounterTrapCardData = mapCardsImages(counterTrapCardData);
