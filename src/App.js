@@ -40,6 +40,8 @@ import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/X
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import { useGetSearchedCardsData } from "./shared/useGetSearchedCardsData";
+import { renderSearchedCardData } from "./utils/renderSearchedCardData";
 
 const App = () => {
   // const [data, setData] = useState([]);
@@ -62,11 +64,24 @@ const App = () => {
   // useEffect(() => {
   //   getData();
   // }, []);
+  const {
+    data: searchedCardData,
+    isLoading,
+    error,
+  } = useGetSearchedCardsData();
+
+  const searchedCard = renderSearchedCardData(searchedCardData);
+
+  // if (searchedCardData.length === 1) {
+  //   return <div></div>
+  // }
 
   return (
     // <div>{renderData}</div>
     <BrowserRouter>
       <ScrollToTop />
+      <Header />
+      {searchedCard}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spell-cards" element={<SpellCards />} />

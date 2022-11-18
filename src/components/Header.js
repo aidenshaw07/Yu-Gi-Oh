@@ -4,7 +4,7 @@ import "../styles/headerStyle.scss";
 import yugiohlogo from "../assets/yugiohlogo.png";
 import SearchBar from "./SearchBar";
 
-const Header = ({ searchCardName, setSearchCardName }) => {
+const Header = () => {
   return (
     <div className="header-container">
       <Link to="/">
@@ -17,7 +17,7 @@ const Header = ({ searchCardName, setSearchCardName }) => {
         <Link className="link-content" to="/">
           <h3 className="header-text-area">How To Play!</h3>
         </Link>
-        <SearchBar searchCardName={searchCardName} setSearchCardName={setSearchCardName} />
+        <SearchBar />
         </div>
     </div>
   );

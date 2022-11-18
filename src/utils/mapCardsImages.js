@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/mapCardsImages.scss";
 
 export const mapCardsImages = (dataArray) => {
