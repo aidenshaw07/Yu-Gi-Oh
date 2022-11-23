@@ -5,6 +5,7 @@ import "../styles/bannerStyle.scss";
 
 const Banner = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
     const response = await axios.get(
