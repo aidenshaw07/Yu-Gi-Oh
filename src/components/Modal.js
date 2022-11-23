@@ -1,18 +1,17 @@
-import React from "react";
-import "../styles/modalStyle.scss";
+import React, { useState } from "react";
+// import "../styles/modalStyle.scss";
 
 function Modal({ closeModal }) {
+  const [openModal, setOpenModal] = useState(false);
+  closeModal = () => {
+    setOpenModal(!openModal);
+  };
+  console.log(openModal);
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          <button
-            onClick={() => {
-              closeModal(false);
-            }}
-          >
-            X
-          </button>
+          <button>X</button>
         </div>
         <div className="title">
           <h1>Modal</h1>
@@ -21,14 +20,7 @@ function Modal({ closeModal }) {
           <p>Modal body</p>
         </div>
         <div className="footer">
-          <button
-            onClick={() => {
-              closeModal(false);
-            }}
-            id="cancelBtn"
-          >
-            Close
-          </button>
+          <button onClick={() => {closeModal()}} id="cancelBtn">Close</button>
         </div>
       </div>
     </div>

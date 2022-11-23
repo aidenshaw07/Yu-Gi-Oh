@@ -7,7 +7,6 @@ import { Pagination } from "antd";
 import Modal from "../Modal";
 
 const NormalSpellCards = () => {
-  const [openModal, setOpenModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const postPerPage = 48;
   const {
@@ -30,15 +29,7 @@ const NormalSpellCards = () => {
 
   return (
     <>
-      {openModal && <Modal closeModal={setOpenModal} />}
-      <div
-        onClick={() => {
-          setOpenModal(true);
-        }}
-        className="rendered-mapped-cards"
-      >
-        {paginatedCurrentCards}
-      </div>
+      <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
         onChange={(value) => setCurrentPage(value)}

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.scss";
-import axios from "axios";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useParams } from "react-router-dom";
 import Home from "./components/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
@@ -39,49 +38,14 @@ import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
-import Footer from "./components/Footer";
-import { useGetSearchedCardsData } from "./shared/useGetSearchedCardsData";
-import { renderSearchedCardData } from "./utils/renderSearchedCardData";
+import Modal from "./components/Modal";
 
 const App = () => {
-  // const [data, setData] = useState([]);
-
-  // const getData = async () => {
-  //   const response = await axios.get(
-  //     "https://db.ygoprodeck.com/api/v7/cardinfo.php?"
-  //   );
-  //   setData(response.data.data);
-  //   console.log(response.data.data);
-  // };
-
-  // const renderData = data
-  //   .filter((item) => item.name === "Slifer the Sky Dragon")
-  //   .map((item) => {
-  //     return <div>{item.name}</div>;
-  //   });
-  // console.log(renderData);
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-  const {
-    data: searchedCardData,
-    isLoading,
-    error,
-  } = useGetSearchedCardsData();
-
-  const searchedCard = renderSearchedCardData(searchedCardData);
-
-  // if (searchedCardData.length === 1) {
-  //   return <div></div>
-  // }
 
   return (
-    // <div>{renderData}</div>
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-      {searchedCard}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spell-cards" element={<SpellCards />} />
@@ -212,7 +176,6 @@ const App = () => {
           element={<XYZPendulumEffectMonsterCards />}
         />
       </Routes>
-      {/* <Footer /> */}
     </BrowserRouter>
   );
 };

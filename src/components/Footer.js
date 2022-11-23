@@ -1,8 +1,9 @@
 import React from 'react'
+import "../styles/footerStyle.scss";
 
 const Footer = () => {
   return (
-    <div>
+    <div className='footer-container'>
         <button>Click Here If you Want to Play</button>
     </div>
   )

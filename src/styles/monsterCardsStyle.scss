@@ -1,7 +1,6 @@
 .monster-cards-container {
     background-image: url(../assets/Ra.jpg);
-    background-size: 100%;
-    height: 520vh;
+    background-size: contain;
     .monster-cards-child-container {
         display: flex;
         flex-direction: row;

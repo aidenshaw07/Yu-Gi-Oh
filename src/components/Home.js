@@ -1,12 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
+import { useGetSearchedCardsData } from "../shared/useGetSearchedCardsData";
 import "../styles/homeStyle.scss";
+import { renderSearchedCardData } from "../utils/renderSearchedCardData";
+import Footer from "../components/Footer";
 
 const Home = () => {
+  const {
+    data: searchedCardData,
+    isLoading,
+    error,
+  } = useGetSearchedCardsData();
+
+  const searchedCard = renderSearchedCardData(searchedCardData);
+
   return (
     <>
-      <Banner />
+      {searchedCard.length === 1 ? searchedCard : <Banner />}
       <div className="home-container">
         <Link className="link-content" to="/spell-cards">
           <h2>
@@ -24,6 +35,7 @@ const Home = () => {
           </h2>
         </Link>
       </div>
+      <Footer />
     </>
   );
 };
