@@ -39,7 +39,7 @@ export const useGetSearchedCardsData = () => {
     fetchData();
 
     return () => {};
-  }, [name]);
+  }, [name]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { data, isLoading, error };
 };

@@ -10,7 +10,6 @@ const EffectMonsterCards = () => {
   const {
     data: effectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetEffectMonsterCardsData();
 
