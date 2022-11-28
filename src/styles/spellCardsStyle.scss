@@ -1,6 +1,7 @@
 .spell-cards-container {
   background-image: url(../assets/Slifer.jpg);
   background-size: cover;
+  background-attachment: fixed;
   .spell-cards-child-container {
     display: flex;
     flex-direction: row;

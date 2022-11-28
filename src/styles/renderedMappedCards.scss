@@ -1,9 +1,19 @@
-.rendered-mapped-cards {
+.rendered-mapped-cards-container {
+  background-image: url(../assets/mappedCardsBackground.jpg);
+  background-size: contain;
+  background-attachment: fixed;
+  .rendered-mapped-cards {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background-image: url(../assets/mappedCardsBackground.jpg);
-    background-size: contain;
-    background-attachment: fixed;
+  }
+}
+
+.pagination {
+  border: 5px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

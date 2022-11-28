@@ -1,7 +1,7 @@
 .trap-cards-container {
   background-image: url(../assets/Obelisk.jpg);
   background-size: cover;
-
+  background-attachment: fixed;
   .trap-cards-child-container {
     display: flex;
     flex-direction: row;

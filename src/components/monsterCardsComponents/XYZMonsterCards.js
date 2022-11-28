@@ -3,7 +3,7 @@ import { useGetXYZMonsterCardsData } from "../../shared/monsterCardsApi/useGetXY
 
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const XYZMonsterCards = () => {

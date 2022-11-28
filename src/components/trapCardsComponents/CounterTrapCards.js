@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGetCounterTrapCardsData } from "../../shared/trapCardsApi/useGetCounterTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const CounterTrapCards = () => {

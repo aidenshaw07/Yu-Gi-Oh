@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f5f5f5;
-  height: 80vh;
+  height: 100vh;
   .searched-cards-name {
     display: flex;
     justify-content: center;
@@ -15,27 +14,48 @@
   }
 }
 
+.searched-cards-container::before {
+  content: "";
+  background-image: url(../assets/searched-cards-background-img.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  bottom: -5rem;
+  right: 0;
+  opacity: 0.7;
+}
+
 .searched-cards-child-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  background-color: #f5f5f5;
-  border: 5px orange solid;
+  width: 40%;
+  border-radius: 0.2rem;
+backdrop-filter: blur(10px);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
 }
 
 .searched-cards-image {
   margin: 1rem;
   width: 25rem;
   height: 37rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .searched-cards-desc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
 }

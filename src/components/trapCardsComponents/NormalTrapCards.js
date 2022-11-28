@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useGetNormalTrapCardsData } from "../../shared/trapCardsApi/useGetNormalTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const NormalTrapCards = () => {

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const QuickPlaySpellCards = () => {

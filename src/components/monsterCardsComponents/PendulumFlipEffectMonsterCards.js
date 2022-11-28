@@ -3,7 +3,7 @@ import { useGetPendulumFlipEffectMonsterCardsData } from "../../shared/monsterCa
 
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const PendulumFlipEffectMonsterCards = () => {

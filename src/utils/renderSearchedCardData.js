@@ -21,8 +21,12 @@ export const renderSearchedCardData = (searchedDataArray) => {
             <p className="searched-cards-desc">Card Type : {card.type}</p>
             <p className="searched-cards-desc">Card Level : {card.level}</p>
             <p className="searched-cards-desc">Card Race : {card.race}</p>
-            <p className="searched-cards-desc">Card Attribute : {card.attribute}</p>
-            <p className="searched-cards-desc">Card Description : <br /> {card.desc}</p>
+            <p className="searched-cards-desc">
+              Card Attribute : {card.attribute}
+            </p>
+            <p className="searched-cards-desc">
+              Card Description : <br /> {card.desc}
+            </p>
           </div>
         </div>
       );

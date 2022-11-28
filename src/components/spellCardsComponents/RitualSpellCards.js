@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRitualSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
+
 import { Pagination } from "antd";
 
 const RitualSpellCards = () => {

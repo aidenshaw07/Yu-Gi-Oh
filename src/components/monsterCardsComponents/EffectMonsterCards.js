@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetEffectMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-import "../../styles/pagination.scss";
 import { Pagination } from "antd";
 
 const EffectMonsterCards = () => {
@@ -27,7 +25,7 @@ const EffectMonsterCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -39,7 +37,7 @@ const EffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

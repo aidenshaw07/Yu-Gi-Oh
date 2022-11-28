@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { Routes, Route, BrowserRouter, useParams } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
@@ -38,7 +38,6 @@ import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
-import Modal from "./components/Modal";
 
 const App = () => {
 
