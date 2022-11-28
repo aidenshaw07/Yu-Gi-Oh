@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetTunerMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
+import { LoadingOverlay } from "../../shared/Loading";
 import { Pagination } from "antd";
 
 const TunerMonsterCards = () => {
@@ -22,7 +23,7 @@ const TunerMonsterCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

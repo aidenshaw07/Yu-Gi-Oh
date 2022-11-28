@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import { LoadingOverlay } from "../shared/Loading";
 import axios from "axios";
 import "../styles/bannerStyle.scss";
 
 const Banner = () => {
   const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const getData = async () => {
+    try {
     const response = await axios.get(
       "https://db.ygoprodeck.com/api/v7/cardinfo.php?"
     );
     setData(response.data.data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
   };
 
   const renderTopFiveCardsData = data
@@ -59,6 +66,9 @@ const Banner = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  if (loading) return <LoadingOverlay show={loading} />;
+
   return (
     <div>
       <div className="banner-container">{renderTopFiveCardsData}</div>

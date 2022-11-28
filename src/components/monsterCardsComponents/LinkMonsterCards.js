@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetLinkMonsterCardsData } from "../../shared/monsterCardsApi/useGetLinkMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
+import { LoadingOverlay } from "../../shared/Loading";
 import { Pagination } from "antd";
 
 const LinkMonsterCards = () => {
@@ -22,7 +23,7 @@ const LinkMonsterCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

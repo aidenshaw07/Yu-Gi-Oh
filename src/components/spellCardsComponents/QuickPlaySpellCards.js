@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
+import { LoadingOverlay } from "../../shared/Loading";
 import { Pagination } from "antd";
 
 const QuickPlaySpellCards = () => {
@@ -22,7 +23,7 @@ const QuickPlaySpellCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

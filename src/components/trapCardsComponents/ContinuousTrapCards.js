@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGetContinuousTrapCardsData } from "../../shared/trapCardsApi/useGetContinuousTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import { LoadingOverlay } from "../../shared/Loading";
 import "../../styles/renderedMappedCards.scss";
 import { Pagination } from "antd";
 
@@ -22,7 +23,7 @@ const ContinuousTrapCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

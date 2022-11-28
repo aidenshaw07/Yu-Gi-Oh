@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetSynchroTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroTunerMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
+import { LoadingOverlay } from "../../shared/Loading";
 import { Pagination } from "antd";
 
 const SynchroTunerMonsterCards = () => {
@@ -24,7 +25,7 @@ const SynchroTunerMonsterCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

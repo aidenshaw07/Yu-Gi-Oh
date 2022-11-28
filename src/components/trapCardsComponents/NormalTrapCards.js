@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useGetNormalTrapCardsData } from "../../shared/trapCardsApi/useGetNormalTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
+import { LoadingOverlay } from "../../shared/Loading";
 import "../../styles/renderedMappedCards.scss";
 
 import { Pagination } from "antd";
@@ -23,7 +24,7 @@ const NormalTrapCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

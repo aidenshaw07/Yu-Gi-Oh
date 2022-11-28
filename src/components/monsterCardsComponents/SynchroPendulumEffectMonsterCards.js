@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGetSynchroPendulumEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroPendulumEffectMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
+import { LoadingOverlay } from "../../shared/Loading";
 import { Pagination } from "antd";
 
 const SynchroPendulumEffectMonsterCards = () => {
@@ -25,7 +26,7 @@ const SynchroPendulumEffectMonsterCards = () => {
       indexOfLastCard
     );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">

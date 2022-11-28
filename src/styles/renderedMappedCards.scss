@@ -1,6 +1,6 @@
 .rendered-mapped-cards-container {
   background-image: url(../assets/mappedCardsBackground.jpg);
-  background-size: contain;
+  background-size: fit;
   background-attachment: fixed;
   .rendered-mapped-cards {
     display: flex;
@@ -11,7 +11,9 @@
 }
 
 .pagination {
-  border: 5px solid red;
+  // border: 5px solid red;
+  height: 10rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;

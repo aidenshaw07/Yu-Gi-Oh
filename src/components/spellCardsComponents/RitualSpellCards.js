@@ -3,6 +3,7 @@ import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRit
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
 import { Pagination } from "antd";
+import { LoadingOverlay } from "../../shared/Loading";
 
 const RitualSpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +23,7 @@ const RitualSpellCards = () => {
     indexOfLastCard
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">
