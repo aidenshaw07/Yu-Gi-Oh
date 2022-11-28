@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useGetContinuousTrapCardsData } from "../../shared/trapCardsApi/useGetContinuousTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const ContinuousTrapCards = () => {
@@ -11,7 +10,6 @@ const ContinuousTrapCards = () => {
   const {
     data: continuousTrapCardData,
     isLoading,
-    error,
     total,
   } = useGetContinuousTrapCardsData();
 
@@ -27,7 +25,7 @@ const ContinuousTrapCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -39,7 +37,7 @@ const ContinuousTrapCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetUnionEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetUnionEffectMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const UnionEffectMonsterCards = () => {
@@ -12,7 +10,6 @@ const UnionEffectMonsterCards = () => {
   const {
     data: unionEffectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetUnionEffectMonsterCardsData();
 
@@ -30,7 +27,7 @@ const UnionEffectMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -42,7 +39,7 @@ const UnionEffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

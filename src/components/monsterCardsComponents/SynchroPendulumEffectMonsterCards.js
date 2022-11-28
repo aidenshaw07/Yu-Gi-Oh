@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetSynchroPendulumEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroPendulumEffectMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const SynchroPendulumEffectMonsterCards = () => {
@@ -12,7 +10,6 @@ const SynchroPendulumEffectMonsterCards = () => {
   const {
     data: synchroPendulumEffectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetSynchroPendulumEffectMonsterCardsData();
 
@@ -31,7 +28,7 @@ const SynchroPendulumEffectMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -43,7 +40,7 @@ const SynchroPendulumEffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetGeminiMonsterCardsData } from "../../shared/monsterCardsApi/useGetGeminiMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const GeminiMonsterCards = () => {
@@ -12,7 +10,6 @@ const GeminiMonsterCards = () => {
   const {
     data: geminiMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetGeminiMonsterCardsData();
 
@@ -25,11 +22,9 @@ const GeminiMonsterCards = () => {
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -41,7 +36,7 @@ const GeminiMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

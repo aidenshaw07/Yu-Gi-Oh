@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetSpiritMonsterCardsData } from "../../shared/monsterCardsApi/useGetSpiritMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const SpiritMonsterCards = () => {
@@ -12,7 +10,6 @@ const SpiritMonsterCards = () => {
   const {
     data: spiritMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetSpiritMonsterCardsData();
 
@@ -28,7 +25,7 @@ const SpiritMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const SpiritMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

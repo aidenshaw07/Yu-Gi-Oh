@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useGetSynchroTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroTunerMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const SynchroTunerMonsterCards = () => {
@@ -11,7 +10,6 @@ const SynchroTunerMonsterCards = () => {
   const {
     data: synchroTunerMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetSynchroTunerMonsterCardsData();
 
@@ -29,7 +27,7 @@ const SynchroTunerMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -41,7 +39,7 @@ const SynchroTunerMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetPendulumFlipEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumFlipEffectMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const PendulumFlipEffectMonsterCards = () => {
@@ -12,7 +10,6 @@ const PendulumFlipEffectMonsterCards = () => {
   const {
     data: pendulumFlipEffectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetPendulumFlipEffectMonsterCardsData();
 
@@ -29,7 +26,7 @@ const PendulumFlipEffectMonsterCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -41,7 +38,7 @@ const PendulumFlipEffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

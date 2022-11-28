@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useGetCounterTrapCardsData } from "../../shared/trapCardsApi/useGetCounterTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const CounterTrapCards = () => {
@@ -11,7 +10,6 @@ const CounterTrapCards = () => {
   const {
     data: counterTrapCardData,
     isLoading,
-    error,
     total,
   } = useGetCounterTrapCardsData();
 
@@ -26,7 +24,7 @@ const CounterTrapCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -38,7 +36,7 @@ const CounterTrapCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

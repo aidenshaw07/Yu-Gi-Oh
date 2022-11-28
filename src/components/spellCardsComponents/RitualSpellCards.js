@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import { useGetRitualSpellCardsData } from "../../shared/spellCardsApi/useGetRitualSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const RitualSpellCards = () => {
@@ -12,7 +10,6 @@ const RitualSpellCards = () => {
   const {
     data: ritualSpellCardData,
     isLoading,
-    error,
     total,
   } = useGetRitualSpellCardsData();
 
@@ -28,7 +25,7 @@ const RitualSpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const RitualSpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

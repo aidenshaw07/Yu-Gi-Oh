@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetSynchroMonsterCardsData } from "../../shared/monsterCardsApi/useGetSynchroMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const SynchroMonsterCards = () => {
@@ -12,7 +10,6 @@ const SynchroMonsterCards = () => {
   const {
     data: synchroMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetSynchroMonsterCardsData();
 
@@ -28,7 +25,7 @@ const SynchroMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const SynchroMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

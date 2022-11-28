@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import { useGetQuickPlaySpellCardsData } from "../../shared/spellCardsApi/useGetQuickPlaySpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const QuickPlaySpellCards = () => {
@@ -12,7 +10,6 @@ const QuickPlaySpellCards = () => {
   const {
     data: quickPlaySpellCardData,
     isLoading,
-    error,
     total,
   } = useGetQuickPlaySpellCardsData();
 
@@ -28,7 +25,7 @@ const QuickPlaySpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const QuickPlaySpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

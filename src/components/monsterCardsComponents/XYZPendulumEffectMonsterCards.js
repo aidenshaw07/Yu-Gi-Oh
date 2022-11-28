@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetXYZPendulumEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetXYZPendulumEffectMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const XYZPendulumEffectMonsterCards = () => {
@@ -12,7 +10,6 @@ const XYZPendulumEffectMonsterCards = () => {
   const {
     data: xyzPendulumEffectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetXYZPendulumEffectMonsterCardsData();
 
@@ -30,7 +27,7 @@ const XYZPendulumEffectMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -42,7 +39,7 @@ const XYZPendulumEffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

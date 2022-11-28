@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import { useGetFieldSpellCardsData } from "../../shared/spellCardsApi/useGetFieldSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const FieldSpellCards = () => {
@@ -12,7 +10,6 @@ const FieldSpellCards = () => {
   const {
     data: fieldSpellCardData,
     isLoading,
-    error,
     total,
   } = useGetFieldSpellCardsData();
 
@@ -28,7 +25,7 @@ const FieldSpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const FieldSpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

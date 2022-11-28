@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useGetToonMonsterCardsData } from "../../shared/monsterCardsApi/useGetToonMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const ToonMonsterCards = () => {
@@ -11,7 +10,6 @@ const ToonMonsterCards = () => {
   const {
     data: toonMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetToonMonsterCardsData();
 
@@ -27,7 +25,7 @@ const ToonMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -39,7 +37,7 @@ const ToonMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import { useGetContinuousSpellCardsData } from "../../shared/spellCardsApi/useGetContinuousSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const ContinuousSpellCards = () => {
@@ -12,7 +10,6 @@ const ContinuousSpellCards = () => {
   const {
     data: continuousSpellCardData,
     isLoading,
-    error,
     total,
   } = useGetContinuousSpellCardsData();
 
@@ -28,7 +25,7 @@ const ContinuousSpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const ContinuousSpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

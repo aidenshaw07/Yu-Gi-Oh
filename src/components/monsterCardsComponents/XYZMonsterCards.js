@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetXYZMonsterCardsData } from "../../shared/monsterCardsApi/useGetXYZMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const XYZMonsterCards = () => {
@@ -12,7 +10,6 @@ const XYZMonsterCards = () => {
   const {
     data: xyzMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetXYZMonsterCardsData();
 
@@ -28,7 +25,7 @@ const XYZMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const XYZMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

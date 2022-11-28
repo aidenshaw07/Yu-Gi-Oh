@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetFusionMonsterCardsData } from "../../shared/monsterCardsApi/useGetFusionMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const FusionMonsterCards = () => {
@@ -12,7 +10,6 @@ const FusionMonsterCards = () => {
   const {
     data: fusionMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetFusionMonsterCardsData();
 
@@ -28,7 +25,7 @@ const FusionMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const FusionMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useGetNormalSpellCardsData } from "../../shared/spellCardsApi/useGetNormalSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
-import Modal from "../Modal";
 
 const NormalSpellCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,7 +10,6 @@ const NormalSpellCards = () => {
   const {
     data: normalSpellCardData,
     isLoading,
-    error,
     total,
   } = useGetNormalSpellCardsData();
 
@@ -28,7 +25,7 @@ const NormalSpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const NormalSpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

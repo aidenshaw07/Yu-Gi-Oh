@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetLinkMonsterCardsData } from "../../shared/monsterCardsApi/useGetLinkMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const LinkMonsterCards = () => {
@@ -12,7 +10,6 @@ const LinkMonsterCards = () => {
   const {
     data: linkMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetLinkMonsterCardsData();
 
@@ -28,7 +25,7 @@ const LinkMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const LinkMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

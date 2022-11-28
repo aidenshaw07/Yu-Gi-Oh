@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-
 import { useGetEquipSpellCardsData } from "../../shared/spellCardsApi/useGetEquipSpellCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const EquipSpellCards = () => {
@@ -12,7 +10,6 @@ const EquipSpellCards = () => {
   const {
     data: equipSpellCardData,
     isLoading,
-    error,
     total,
   } = useGetEquipSpellCardsData();
 
@@ -28,7 +25,7 @@ const EquipSpellCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const EquipSpellCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

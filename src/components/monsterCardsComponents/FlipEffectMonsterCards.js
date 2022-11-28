@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useGetFlipEffectMonsterCardsData } from "../../shared/monsterCardsApi/useGetFlipEffectMonsterCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const FlipEffectMonsterCards = () => {
@@ -11,7 +10,6 @@ const FlipEffectMonsterCards = () => {
   const {
     data: flipEffectMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetFlipEffectMonsterCardsData();
 
@@ -26,11 +24,9 @@ const FlipEffectMonsterCards = () => {
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -42,7 +38,7 @@ const FlipEffectMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

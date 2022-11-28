@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetRitualMonsterCardsData } from "../../shared/monsterCardsApi/useGetRitualMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const RitualMonsterCards = () => {
@@ -12,7 +10,6 @@ const RitualMonsterCards = () => {
   const {
     data: ritualMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetRitualMonsterCardsData();
 
@@ -28,7 +25,7 @@ const RitualMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +37,7 @@ const RitualMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

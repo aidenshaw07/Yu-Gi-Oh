@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetNormalTunerMonsterCardsData } from "../../shared/monsterCardsApi/useGetNormalTunerMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const NormalTunerMonsterCards = () => {
@@ -12,7 +10,6 @@ const NormalTunerMonsterCards = () => {
   const {
     data: normalTunerMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetNormalTunerMonsterCardsData();
 
@@ -29,7 +26,7 @@ const NormalTunerMonsterCards = () => {
 
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -41,7 +38,7 @@ const NormalTunerMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

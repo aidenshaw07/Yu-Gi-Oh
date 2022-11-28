@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetPendulumEffectFusionMonsterCardsData } from "../../shared/monsterCardsApi/useGetPendulumEffectFusionMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const PendulumEffectFusionMonsterCards = () => {
@@ -12,7 +10,6 @@ const PendulumEffectFusionMonsterCards = () => {
   const {
     data: pendulumEffectFusionMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetPendulumEffectFusionMonsterCardsData();
 
@@ -30,7 +27,7 @@ const PendulumEffectFusionMonsterCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -42,7 +39,7 @@ const PendulumEffectFusionMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

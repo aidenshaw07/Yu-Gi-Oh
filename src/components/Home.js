@@ -4,15 +4,14 @@ import Banner from "../components/Banner";
 import { useGetSearchedCardsData } from "../shared/useGetSearchedCardsData";
 import "../styles/homeStyle.scss";
 import { renderSearchedCardData } from "../utils/renderSearchedCardData";
-import Footer from "../components/Footer";
 import { useStore } from "../zustand/Store";
 
 const Home = () => {
   const setFieldState = useStore((cardInfo) => cardInfo.setFieldState);
   const {
     data: searchedCardData,
-    isLoading,
-    error,
+    // isLoading,
+    // error,
   } = useGetSearchedCardsData();
 
   const searchedCard = renderSearchedCardData(searchedCardData);
@@ -37,7 +36,6 @@ const Home = () => {
           </h2>
         </Link>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };

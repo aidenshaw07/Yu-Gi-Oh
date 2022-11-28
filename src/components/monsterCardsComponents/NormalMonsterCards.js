@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useGetNormalMonsterCardsData } from "../../shared/monsterCardsApi/useGetNormalMonsterCardsData";
-
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
-
 import { Pagination } from "antd";
 
 const NormalMonsterCards = () => {
@@ -12,7 +10,6 @@ const NormalMonsterCards = () => {
   const {
     data: normalMonsterCardData,
     isLoading,
-    error,
     total,
   } = useGetNormalMonsterCardsData();
 
@@ -25,11 +22,9 @@ const NormalMonsterCards = () => {
     indexOfLastCard
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   if (isLoading) return <div>Loading...</div>;
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -41,7 +36,7 @@ const NormalMonsterCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 

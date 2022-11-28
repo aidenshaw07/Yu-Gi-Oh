@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { useGetNormalTrapCardsData } from "../../shared/trapCardsApi/useGetNormalTrapCardsData";
 import { mapCardsImages } from "../../utils/mapCardsImages";
 import "../../styles/renderedMappedCards.scss";
@@ -12,7 +11,6 @@ const NormalTrapCards = () => {
   const {
     data: normalTrapCardData,
     isLoading,
-    error,
     total,
   } = useGetNormalTrapCardsData();
 
@@ -28,7 +26,7 @@ const NormalTrapCards = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
       <Pagination
         className="pagination"
@@ -40,7 +38,7 @@ const NormalTrapCards = () => {
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
       />
-    </>
+    </div>
   );
 };
 
