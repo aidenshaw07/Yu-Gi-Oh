@@ -25,7 +25,10 @@ const PendulumFlipEffectMonsterCards = () => {
     indexOfLastCard
   );
 
+  const goToTop = () => window.scrollTo(0, 0);
+
   if (isLoading) return <LoadingOverlay show={isLoading} />;
+
   return (
     <div className="rendered-mapped-cards-container">
       <div className="rendered-mapped-cards">{paginatedCurrentCards}</div>
@@ -38,6 +41,7 @@ const PendulumFlipEffectMonsterCards = () => {
         showQuickJumper
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
+        onClick={goToTop()}
       />
     </div>
   );

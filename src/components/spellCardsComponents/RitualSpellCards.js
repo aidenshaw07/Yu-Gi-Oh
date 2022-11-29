@@ -23,6 +23,8 @@ const RitualSpellCards = () => {
     indexOfLastCard
   );
 
+  const goToTop = () => window.scrollTo(0, 0);
+
   if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
@@ -37,6 +39,7 @@ const RitualSpellCards = () => {
         showQuickJumper
         onShowSizeChange={postPerPage}
         showSizeChanger={false}
+        onClick={goToTop()}
       />
     </div>
   );
