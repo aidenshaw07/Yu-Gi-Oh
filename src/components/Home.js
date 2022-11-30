@@ -20,17 +20,29 @@ const Home = () => {
     <>
       {searchedCard.length === 1 ? searchedCard : <Banner />}
       <div className="home-container">
-        <Link onClick={() => setFieldState("searchedCardName", "")} className="link-content" to="/spell-cards">
+        <Link
+          onClick={() => setFieldState("searchedCardName", "")}
+          className="link-content"
+          to="/spell-cards"
+        >
           <h2>
             Spell <br /> Cards
           </h2>
         </Link>
-        <Link onClick={() => setFieldState("searchedCardName", "")}  className="link-content" to="/trap-cards">
+        <Link
+          onClick={() => setFieldState("searchedCardName", "")}
+          className="link-content"
+          to="/trap-cards"
+        >
           <h2>
             Trap <br /> Cards
           </h2>
         </Link>
-        <Link onClick={() => setFieldState("searchedCardName", "")}  className="link-content" to="/monster-cards">
+        <Link
+          onClick={() => setFieldState("searchedCardName", "")}
+          className="link-content"
+          to="/monster-cards"
+        >
           <h2>
             Monster <br /> Cards
           </h2>

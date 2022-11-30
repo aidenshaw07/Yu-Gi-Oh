@@ -38,9 +38,9 @@ import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
+import HowToPlay from "./components/HowToPlay";
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -174,6 +174,7 @@ const App = () => {
           path="/monster-cards/xyz-pendulum-effect-monster-cards"
           element={<XYZPendulumEffectMonsterCards />}
         />
+        <Route path="/how-to-play" element={<HowToPlay />} />
       </Routes>
     </BrowserRouter>
   );

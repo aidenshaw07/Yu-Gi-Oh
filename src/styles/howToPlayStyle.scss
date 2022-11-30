@@ -1,0 +1,50 @@
+.how-to-play-container {
+  background-image: url(../assets/blue-eyes.jpg);
+  background-attachment: fixed;
+  min-height: 200vh;
+  background-size: cover;
+  padding-top: 5rem;
+  .how-to-play-child-container {
+    margin: 0rem 5rem;
+    min-height: 200vh;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.how-to-play-header-sentence {
+    padding: 1rem 0rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.how-to-play-sub-header-sentences {
+    font-size: 1.5rem;
+    padding: 0rem 3rem ;
+    font-weight: bold;
+}
+
+
+.how-to-play-ptags {
+    padding: 1rem 3rem ;
+    font-size: 1rem;
+}
+
+.how-to-play-ultags {
+    font-size: 1rem;
+    padding: 0rem 0rem 0rem 4rem;
+}
+
+.pro-tip {
+    margin: 0rem 3rem;
+    background: #cccccc;
+    border: 1px #cccccc solid;
+    padding: 1rem;
+    border-radius: 2px;
+    font-weight: 600;
+}
