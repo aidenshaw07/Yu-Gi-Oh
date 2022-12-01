@@ -1,11 +1,11 @@
 .how-to-play-container {
   background-image: url(../assets/blue-eyes.jpg);
   background-attachment: fixed;
-  min-height: 1000vh;
+  min-height: 1150vh;
   background-size: cover;
   padding: 5rem;
   .how-to-play-child-container {
-    min-height: 1000vh;
+    min-height: 1150vh;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -46,5 +46,10 @@
     border: 1px #cccccc solid;
     padding: 1rem 3rem;
     border-radius: 2px;
+    font-weight: 600;
+}
+
+#atag {
+    color: #000000;
     font-weight: 600;
 }

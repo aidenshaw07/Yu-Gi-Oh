@@ -360,14 +360,226 @@ const HowToPlay = () => {
           </li>
           <li>With a card's special effect</li>
         </ul>
-        <p className="how-to-play-ptags">Before you begin a duel, you must follow these steps:</p>
+        <p className="how-to-play-ptags">
+          Before you begin a duel, you must follow these steps:
+        </p>
         <ol className="how-to-play-ultags">
-            <li>Players should shuffle their decks (it is acceptable to shuffle and cut your opponent's deck)</li>
-            <li>Place all decks face-down in their specified Deck Zones</li>
-            <li>Players show their side deck to their opponent and count all the cards in each deck</li>
-            <li>If this is the first duel, the winner of coin flip/rock-paper-scissors decides which turn they would like in the duel (or the loser of previous duel decides who goes first)</li>
-            <li>Draw 5 cards from the top of the Main Deck and begin!</li>
-            </ol>
+          <li>
+            Players should shuffle their decks (it is acceptable to shuffle and
+            cut your opponent's deck)
+          </li>
+          <li>Place all decks face-down in their specified Deck Zones</li>
+          <li>
+            Players show their side deck to their opponent and count all the
+            cards in each deck
+          </li>
+          <li>
+            If this is the first duel, the winner of coin
+            flip/rock-paper-scissors decides which turn they would like in the
+            duel (or the loser of previous duel decides who goes first)
+          </li>
+          <li>Draw 5 cards from the top of the Main Deck and begin!</li>
+        </ol>
+        <div className="how-to-play-header-sentence">Playing Yu-Gi-Oh!</div>
+        <div className="how-to-play-sub-header-sentences">Gameplay</div>
+        <p className="how-to-play-ptags">
+          Players take turns until the game winner is declared. Each turn
+          contains six phases:
+        </p>
+        <ol className="how-to-play-ultags">
+          <li>Draw Phase</li>
+          <li>Standby Phase</li>
+          <li>Main Phase 1</li>
+          <li>Battle Phase</li>
+          <li>Main Phase 2</li>
+          <li>End Phase</li>
+        </ol>
+        <p className="how-to-play-ptags">
+          <strong>Draw Phase</strong> - Player draws card and is given
+          opportunity to activate Trap Cards or Quick-Play Spells.
+        </p>
+        <p className="how-to-play-ptags">
+          <strong>Standby</strong> - Any effects that activate or costs that
+          must be paid are completed in this phase.
+        </p>
+        <p className="how-to-play-ptags">
+          <strong>Main Phase 1</strong> - Player may summon or set a monster,
+          change monster battle positions, activate a card or effect, and/or set
+          Spell & Trap cards.
+        </p>
+        <p className="how-to-play-ptags">
+          <strong>Battle Phase</strong> - You can choose not to battle, in which
+          case you will proceed to the end phase, but if you choose to enter in
+          combat, follow these steps:
+        </p>
+        <ol className="how-to-play-ultags">
+          <li>
+            The player should announce "I'm entering the Battle Phase." (the
+            player with first turn cannot conduct a Battle Phase on their first
+            turn).
+          </li>
+          <li>
+            Select one monster to attack with and choose your target. You can
+            only perform a direct attack to your opponent's Life Points if your
+            opponent has no monsters in the field. Each monster in the face-up
+            attack position is allowed a single attack per turn (more about
+            positions in the Monster Battle Rules section below).
+          </li>
+          <li>
+            Calculate the result of the battle. (for questions about
+            calculations, refer to Monster Battle Rules section further down).
+          </li>
+          <li>
+            After you are done, announce to your opponent that you are ending
+            the Battle Phase.
+          </li>
+        </ol>
+        <p className="how-to-play-ptags">
+          <strong>Main Phase 2</strong> - Same actions as Main Phase 1 unless
+          you already summoned or set a monster within the current turn.
+        </p>
+        <p className="how-to-play-ptags">
+          <strong>End Phase</strong> - Resolve card effects which activate in
+          this phase and discard if you have more than six cards in your hand.
+        </p>
+        <div className="how-to-play-sub-header-sentences">
+          Monster Battle Rules
+        </div>
+        <p className="how-to-play-ptags">
+          There are 3 different positions cards can be in while on the
+          battlefield:
+        </p>
+        <ul className="how-to-play-ultags">
+          <li>Face-Up Attack Position</li>
+          <li>Face-Up Defense Position</li>
+          <li>Face-Down Defense Position</li>
+        </ul>
+        <p className="how-to-play-ptags">
+          A monster card in the <strong>Face-up Attack</strong> position is able
+          to declare attacks and can be attacked. In this position, the ATK
+          value of the monster represents the card in a battle situation.
+        </p>
+        <p className="how-to-play-ptags">
+          A monster card in the <strong>Face-up Defense</strong> position is not
+          able to declare attacks, but it can be attacked. In this position, the
+          DEF value of the monster represents the card in a battle situation.
+          Monsters cannot be Normal Summoned in this position unless the effect
+          of a card allows it.
+        </p>
+        <p className="how-to-play-ptags">
+          A monster card in the <strong>Face-down Defense</strong> position goes
+          by the same rules as the face-up Defense position except for two
+          things; monsters CAN be summoned face-down but cannot be equipped. If
+          a face-down monster is attacked, flip the card face-up during the
+          damage step to calculate necessary damage, if any.
+        </p>
+        <p className="how-to-play-ptags">
+          Attacking a monster in the Attack position is also different from
+          attacking a Defense position monster. Here's how:
+        </p>
+        <ul className="how-to-play-ultags">
+          <li>Attack vs Attack</li>
+          <ul>
+            <li>
+              When your monster's ATK value is higher than the opponent's ATK
+              value, the opponent's monster is sent to the Graveyard and the
+              amount of excess ATK value is subtracted from the opponent's Life
+              Points.
+            </li>
+            <li>
+              When both monsters' ATK value is even, both monsters are sent to
+              the Graveyard.
+            </li>
+            <li>
+              When your monster's ATK value is lower than the opponent's ATK
+              value, your monster is sent to the Graveyard and the amount of
+              excess ATK value is subtracted from your Life Points.
+            </li>
+          </ul>
+          <li>Attack vs Defense</li>
+          <ul>
+            <li>
+              When your monster's ATK value is higher than your opponent's DEF
+              value, the opponent's monster is sent to the Graveyard. No damage
+              is done to Life Points.
+            </li>
+            <li>
+              When both monsters' ATK and DEF value is even, it is a tie. No
+              monsters are destroyed.
+            </li>
+            <li>
+              When your monster's ATK value is lower than your opponent's DEF
+              value, the amount of excess DEF value is subtracted from your Life
+              Points. No monsters are destroyed.
+            </li>
+          </ul>
+        </ul>
+        <div className="how-to-play-sub-header-sentences">
+          Card Effect Rules (Chains)
+        </div>
+        <p className="how-to-play-ptags">
+          Every time a card with an effect is activated, the opponent of the
+          player who activated the effect is given the opportunity to respond to
+          that effect with an effect of their own. If they don't respond with an
+          effect, the player that activated the first effect is given a chance
+          to add another effect on top of the original and the cycle starts over
+          again until both players choose to stop playing effects. When
+          additional effects are added by either player, this creates a Chain.
+        </p>
+        <p className="how-to-play-ptags">
+          If you want to respond to an effect and create a Chain, you must play
+          an effect with a Spell Speed of 2 or higher and the respondent cannot
+          be a lower Spell Speed than the effect played prior. Every card effect
+          has a Spell Speed of 1 to 3. Here are the different types of Spell
+          Speeds:
+        </p>
+        <ul className="how-to-play-ultags">
+          <li>
+            <strong>Spell Speed 1</strong> : Spells (Normal, Equip, Continuous,
+            Field, Ritual), Monster Effects (Ignition, Trigger, and Flip)
+          </li>
+          <li>
+            <strong>Spell Speed 2</strong> : Trap (Normal, Continuous),
+            Quick-Play Spells, Effect Monster's Quick Effects
+          </li>
+          <li>
+            <strong>Spell Speed 3</strong> : Counter Trap
+          </li>
+        </ul>
+        <p className="how-to-play-ptags">
+          The turn player always has priority with card effect activation. This
+          means, they have the choice whether or not they want to use an effect
+          and the opponent can only activate an effect if the turn player
+          activates an effect and it creates a chain or if it is an effect that
+          activates automatically, like a Trigger or Flip effect.
+        </p>
+        <div className="how-to-play-sub-header-sentences">Other Rules</div>
+        <p className="how-to-play-ptags">
+          Some cards have a higher restriction to the number of copies allowed
+          in the deck (as opposed to the general 3 copy limit). A list of all
+          card restrictions can be found on <a id="atag" href="https://www.yugioh-card.com/" target="_blank" rel="noopener noreferrer">www.yugioh-card.com</a>.
+        </p>
+        <p className="how-to-play-ptags">
+          <strong>Monster Tokens</strong> are monster cards that are summoned to
+          the battlefield from the activation of a card's effect. It doesn't
+          have to be a card, it just has to be a physical object that can show
+          attack and defense position. Monster Tokens only exist in the
+          battlefield and take up one of the five spots in the Monster Card
+          Zone. When a Token is destroyed, it is removed from the field.
+        </p>
+        <p className="how-to-play-ptags">
+          The number of cards in a player's hand, their decks, and their
+          Graveyard, as well as a player's Life Points are all public knowledge.
+        </p>
+        <p className="how-to-play-ptags">
+          A specific card effect takes priority over basic rules.
+        </p>
+        <p className="how-to-play-ptags">
+          The Yu-Gi-Oh! card game is a complex one, but loads of fun once you're
+          knee deep in monsters, spells, and good-old-fashioned duels. Now that
+          you know how to play YuGiOh, you'll need to build up your deck. Check
+          out our huge selection of YuGiOh cards and let the games begin!
+        </p>
       </div>
     </div>
   );
