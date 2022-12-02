@@ -10,15 +10,15 @@ const Banner = () => {
 
   const getData = async () => {
     try {
-    const response = await axios.get(
-      "https://db.ygoprodeck.com/api/v7/cardinfo.php?"
-    );
-    setData(response.data.data);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    setLoading(false);
-  }
+      const response = await axios.get(
+        "https://db.ygoprodeck.com/api/v7/cardinfo.php?"
+      );
+      setData(response.data.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const renderTopFiveCardsData = data
@@ -72,14 +72,15 @@ const Banner = () => {
   return (
     <div>
       <div className="banner-container">{renderTopFiveCardsData}</div>
-      <ReactPlayer
-        playing={true}
-        muted={true}
-        loop={true}
-        controls
-        width="100%"
-        url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
-      />
+        <ReactPlayer
+          className="video"
+          playing={true}
+          muted={true}
+          loop={true}
+          controls
+          width={window.innerWidth}
+          url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
+        />
       <div className="banner-container">{renderBottomFiveCardsData}</div>
     </div>
   );
