@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/searchBarStyle.scss";
 import { useStore } from "../zustand/Store";
 

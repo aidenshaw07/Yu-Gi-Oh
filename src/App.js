@@ -1,6 +1,5 @@
-import React from "react";
 import "./App.scss";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useParams } from "react-router-dom";
 import Home from "./components/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
@@ -36,6 +35,7 @@ import SynchroPendulumEffectMonsterCards from "./components/monsterCardsComponen
 import SynchroTunerMonsterCards from "./components/monsterCardsComponents/SynchroTunerMonsterCards";
 import XYZMonsterCards from "./components/monsterCardsComponents/XYZMonsterCards";
 import XYZPendulumEffectMonsterCards from "./components/monsterCardsComponents/XYZPendulumEffectMonsterCards";
+import MapCardsInformation from "./utils/MapCardsInformation";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import HowToPlay from "./components/HowToPlay";
@@ -175,6 +175,7 @@ const App = () => {
           element={<XYZPendulumEffectMonsterCards />}
         />
         <Route path="/how-to-play" element={<HowToPlay />} />
+        <Route path="/:cardId" element={<MapCardsInformation />} />
       </Routes>
     </BrowserRouter>
   );

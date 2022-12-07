@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/howToPlayStyle.scss";
 
 const HowToPlay = () => {
@@ -557,7 +556,16 @@ const HowToPlay = () => {
         <p className="how-to-play-ptags">
           Some cards have a higher restriction to the number of copies allowed
           in the deck (as opposed to the general 3 copy limit). A list of all
-          card restrictions can be found on <a id="atag" href="https://www.yugioh-card.com/" target="_blank" rel="noopener noreferrer">www.yugioh-card.com</a>.
+          card restrictions can be found on{" "}
+          <a
+            id="atag"
+            href="https://www.yugioh-card.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.yugioh-card.com
+          </a>
+          .
         </p>
         <p className="how-to-play-ptags">
           <strong>Monster Tokens</strong> are monster cards that are summoned to
