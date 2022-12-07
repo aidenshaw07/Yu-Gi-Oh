@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Routes, Route, BrowserRouter, useParams } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import SpellCards from "./categories/SpellCards";
 import TrapCards from "./categories/TrapCards";
