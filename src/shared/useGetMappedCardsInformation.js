@@ -37,8 +37,9 @@ export const useGetMappedCardsInformation = () => {
 
   useEffect(() => {
     fetchData();
-
+    
     return () => {};
+    // eslint-disable-next-line
   }, []);
 
   return { data, isLoading, error };
