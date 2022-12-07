@@ -10,7 +10,7 @@ const MonsterCards = () => {
           className="monster-cards-link"
           to="/monster-cards/effect-monster-cards"
         >
-          <h2>
+          <h2 className="asd">
             Effect
             <br /> Monster Cards
           </h2>

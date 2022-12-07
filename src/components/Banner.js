@@ -78,7 +78,7 @@ const Banner = () => {
           muted={true}
           loop={true}
           controls
-          width={window.innerWidth}
+          width="100%"
           url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
         />
       <div className="banner-container">{renderBottomFiveCardsData}</div>
