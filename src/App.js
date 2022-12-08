@@ -47,44 +47,69 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/spell-cards" element={<SpellCards />} />
-        <Route
-          path="/spell-cards/normal-spell-cards"
-          element={<NormalSpellCards />}
-        />
-        <Route
-          path="/spell-cards/field-spell-cards"
-          element={<FieldSpellCards />}
-        />
-        <Route
-          path="/spell-cards/equip-spell-cards"
-          element={<EquipSpellCards />}
-        />
-        <Route
-          path="/spell-cards/continuous-spell-cards"
-          element={<ContinuousSpellCards />}
-        />
-        <Route
-          path="/spell-cards/quick-play-spell-cards"
-          element={<QuickPlaySpellCards />}
-        />
-        <Route
-          path="/spell-cards/ritual-spell-cards"
-          element={<RitualSpellCards />}
-        />
-        <Route path="/trap-cards" element={<TrapCards />} />
-        <Route
-          path="/trap-cards/normal-trap-cards"
-          element={<NormalTrapCards />}
-        />
-        <Route
-          path="/trap-cards/continuous-trap-cards"
-          element={<ContinuousTrapCards />}
-        />
-        <Route
-          path="/trap-cards/counter-trap-cards"
-          element={<CounterTrapCards />}
-        />
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="normal-spell-cards">
+            <Route index element={<NormalSpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="field-spell-cards">
+            <Route index element={<FieldSpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="equip-spell-cards">
+            <Route index element={<EquipSpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="continuous-spell-cards">
+            <Route index element={<ContinuousSpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="quick-play-spell-cards">
+            <Route index element={<QuickPlaySpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/spell-cards">
+          <Route index element={<SpellCards />} />
+          <Route path="ritual-spell-cards">
+            <Route index element={<RitualSpellCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/trap-cards">
+          <Route index element={<TrapCards />} />
+          <Route path="normal-trap-cards">
+            <Route index element={<NormalTrapCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/trap-cards">
+          <Route index element={<TrapCards />} />
+          <Route path="continuous-trap-cards">
+            <Route index element={<ContinuousTrapCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/trap-cards">
+          <Route index element={<TrapCards />} />
+          <Route path="counter-trap-cards">
+            <Route index element={<CounterTrapCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
         <Route path="/monster-cards" element={<MonsterCards />} />
         <Route
           path="/monster-cards/effect-monster-cards"
@@ -175,7 +200,7 @@ const App = () => {
           element={<XYZPendulumEffectMonsterCards />}
         />
         <Route path="/how-to-play" element={<HowToPlay />} />
-        <Route path="/:cardId" element={<MapCardsInformation />} />
+        {/* <Route path="/:cardId" element={<MapCardsInformation />} /> */}
       </Routes>
     </BrowserRouter>
   );
