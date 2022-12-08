@@ -110,97 +110,161 @@ const App = () => {
             <Route path=":cardId" element={<MapCardsInformation />} />
           </Route>
         </Route>
-        <Route path="/monster-cards" element={<MonsterCards />} />
-        <Route
-          path="/monster-cards/effect-monster-cards"
-          element={<EffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/flip-effect-monster-cards"
-          element={<FlipEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/gemini-monster-cards"
-          element={<GeminiMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/normal-monster-cards"
-          element={<NormalMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/normal-tuner-monster-cards"
-          element={<NormalTunerMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/pendulum-effect-monster-cards"
-          element={<PendulumEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/pendulum-flip-effect-monster-cards"
-          element={<PendulumFlipEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/pendulum-tuner-effect-monster-cards"
-          element={<PendulumTunerEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/ritual-effect-monster-cards"
-          element={<RitualEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/ritual-monster-cards"
-          element={<RitualMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/spirit-monster-cards"
-          element={<SpiritMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/toon-monster-cards"
-          element={<ToonMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/tuner-monster-cards"
-          element={<TunerMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/union-effect-monster-cards"
-          element={<UnionEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/fusion-monster-cards"
-          element={<FusionMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/pendulum-effect-fusion-monster-cards"
-          element={<PendulumEffectFusionMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/link-monster-cards"
-          element={<LinkMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/synchro-monster-cards"
-          element={<SynchroMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/synchro-pendulum-effect-monster-cards"
-          element={<SynchroPendulumEffectMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/synchro-tuner-monster-cards"
-          element={<SynchroTunerMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/xyz-monster-cards"
-          element={<XYZMonsterCards />}
-        />
-        <Route
-          path="/monster-cards/xyz-pendulum-effect-monster-cards"
-          element={<XYZPendulumEffectMonsterCards />}
-        />
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="effect-monster-cards">
+            <Route index element={<EffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="flip-effect-monster-cards">
+            <Route index element={<FlipEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="gemini-monster-cards">
+            <Route index element={<GeminiMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="normal-monster-cards">
+            <Route index element={<NormalMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="normal-tuner-monster-cards">
+            <Route index element={<NormalTunerMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="pendulum-effect-monster-cards">
+            <Route index element={<PendulumEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="pendulum-flip-effect-monster-cards">
+            <Route index element={<PendulumFlipEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="pendulum-tuner-effect-monster-cards">
+            <Route index element={<PendulumTunerEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="ritual-effect-monster-cards">
+            <Route index element={<RitualEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="ritual-monster-cards">
+            <Route index element={<RitualMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="spirit-monster-cards">
+            <Route index element={<SpiritMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="toon-monster-cards">
+            <Route index element={<ToonMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="tuner-monster-cards">
+            <Route index element={<TunerMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="union-effect-monster-cards">
+            <Route index element={<UnionEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="fusion-monster-cards">
+            <Route index element={<FusionMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="pendulum-effect-fusion-monster-cards">
+            <Route index element={<PendulumEffectFusionMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="link-monster-cards">
+            <Route index element={<LinkMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="synchro-monster-cards">
+            <Route index element={<SynchroMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="synchro-pendulum-effect-monster-cards">
+            <Route index element={<SynchroPendulumEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="synchro-tuner-monster-cards">
+            <Route index element={<SynchroTunerMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="xyz-monster-cards">
+            <Route index element={<XYZMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
+        <Route path="/monster-cards">
+          <Route index element={<MonsterCards />} />
+          <Route path="xyz-pendulum-effect-monster-cards">
+            <Route index element={<XYZPendulumEffectMonsterCards />} />
+            <Route path=":cardId" element={<MapCardsInformation />} />
+          </Route>
+        </Route>
         <Route path="/how-to-play" element={<HowToPlay />} />
-        {/* <Route path="/:cardId" element={<MapCardsInformation />} /> */}
       </Routes>
     </BrowserRouter>
   );

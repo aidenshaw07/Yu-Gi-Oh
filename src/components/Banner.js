@@ -72,15 +72,15 @@ const Banner = () => {
   return (
     <div>
       <div className="banner-container">{renderTopFiveCardsData}</div>
-        <ReactPlayer
-          className="video"
-          playing={true}
-          muted={true}
-          loop={true}
-          controls
-          width="100%"
-          url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
-        />
+      <ReactPlayer
+        className="video"
+        playing={true}
+        muted={true}
+        loop={true}
+        controls
+        width="100%"
+        url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
+      />
       <div className="banner-container">{renderBottomFiveCardsData}</div>
     </div>
   );

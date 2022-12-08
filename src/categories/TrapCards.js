@@ -8,8 +8,7 @@ const TrapCards = () => {
       <div className="trap-cards-child-container">
         <Link className="trap-cards-link" to="/trap-cards/normal-trap-cards">
           <h2 className="childContainer">
-            Normal
-            <br /> Trap Cards
+            Normal Trap Cards
           </h2>
         </Link>
         <Link
@@ -17,14 +16,12 @@ const TrapCards = () => {
           to="/trap-cards/continuous-trap-cards"
         >
           <h2 className="childContainer">
-            Continuous
-            <br /> Trap Cards
+            Continuous Trap Cards
           </h2>
         </Link>
         <Link className="trap-cards-link" to="/trap-cards/counter-trap-cards">
           <h2 className="childContainer">
-            Counter
-            <br /> Trap Cards
+            Counter Trap Cards
           </h2>
         </Link>
       </div>
