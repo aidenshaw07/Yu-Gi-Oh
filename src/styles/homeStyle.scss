@@ -2,17 +2,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
   justify-content: space-around;
-  height: 47rem;
-  padding: 5rem 0 2rem 0;
+  padding: 20rem 0 20rem 0;
   background-image: url(../assets/egyptiangods.jpg);
   background-size: 100% 100%;
   border-top: 0.1rem solid black;
   .link-content {
     text-decoration: none;
     text-align: center;
-    width: 11rem;
-    height: 18rem;
+    width: 250px;
+    height: 400px;
     background-image: url(../assets/yugioh1.webp);
     background-size: 100% 100%;
     border-radius: 5px;

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "../styles/headerStyle.scss";
-import yugiohlogo from "../assets/yugiohlogo.png";
+import yugiohlogo from "../assets/yugiohlogo.svg";
 import SearchBar from "./SearchBar";
 import { useStore } from "../zustand/Store";
 
@@ -9,32 +9,34 @@ const Header = () => {
   const setFieldState = useStore((cardInfo) => cardInfo.setFieldState);
   return (
     <div className="header-container">
-      <Link to="/">
-        <img
-          onClick={() => setFieldState("searchedCardName", "")}
-          className="header-img"
-          src={yugiohlogo}
-          alt="logo"
-        />
-      </Link>
-      <div className="header-child-container">
-        <Link className="link-content" to="/">
-          <h3
+      <div className="header-child-container1">
+        <Link to="/">
+          <img
+            onClick={() => setFieldState("searchedCardName", "")}
+            className="header-img"
+            src={yugiohlogo}
+            alt="logo"
+          />
+        </Link>
+      </div>
+      <div className="header-child-container2">{location.pathname === "/" && <SearchBar />}</div>
+      <div className="header-child-container3">
+        <Link to="/">
+          <div
             onClick={() => setFieldState("searchedCardName", "")}
             className="header-text-area"
           >
             Home
-          </h3>
+          </div>
         </Link>
-        <Link className="link-content" to="/how-to-play">
-          <h3
+        <Link to="/how-to-play">
+          <div
             onClick={() => setFieldState("searchedCardName", "")}
             className="header-text-area"
           >
-            How To <br /> Play!
-          </h3>
+            How To Play!
+          </div>
         </Link>
-        {location.pathname === "/" && <SearchBar />}
       </div>
     </div>
   );

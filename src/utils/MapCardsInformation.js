@@ -13,7 +13,7 @@ const MapCardsInformation = () => {
         alt={card.name}
       />
       <div className="searched-cards-child-container">
-        <h1 className="searched-cards-name">{card.name}</h1>
+        <div className="searched-cards-name">{card.name}</div>
         <p className="searched-cards-desc">Card Type : {card.type}</p>
         <p className="searched-cards-desc">Card Level : {card.level}</p>
         <p className="searched-cards-desc">Card Race : {card.race}</p>

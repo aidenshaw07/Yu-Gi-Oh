@@ -22,6 +22,15 @@ const Home = () => {
         <Link
           onClick={() => setFieldState("searchedCardName", "")}
           className="link-content"
+          to="/monster-cards"
+        >
+          <h2>
+            Monster <br /> Cards
+          </h2>
+        </Link>
+        <Link
+          onClick={() => setFieldState("searchedCardName", "")}
+          className="link-content"
           to="/spell-cards"
         >
           <h2>
@@ -35,15 +44,6 @@ const Home = () => {
         >
           <h2>
             Trap <br /> Cards
-          </h2>
-        </Link>
-        <Link
-          onClick={() => setFieldState("searchedCardName", "")}
-          className="link-content"
-          to="/monster-cards"
-        >
-          <h2>
-            Monster <br /> Cards
           </h2>
         </Link>
       </div>

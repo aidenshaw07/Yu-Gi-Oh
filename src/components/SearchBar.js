@@ -6,7 +6,7 @@ const SearchBar = () => {
   const setFieldState = useStore((cardInfo) => cardInfo.setFieldState);
 
   return (
-    <div className="searchbar-container-asd">
+    <div className="searchbar-container">
       <input
         type="text"
         className="searchbar-input"
