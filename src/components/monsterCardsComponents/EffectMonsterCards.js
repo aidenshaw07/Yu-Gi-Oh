@@ -4,7 +4,7 @@ import { mapCardsImages } from "../../utils/mapCardsImages";
 import { LoadingOverlay } from "../../shared/Loading";
 import "../../styles/renderedMappedCards.scss";
 import { Pagination } from "antd";
-import { Link } from "react-router-dom";
+import { filteredCardsData } from "../../utils/filteredCardsData";
 
 const EffectMonsterCards = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +18,7 @@ const EffectMonsterCards = () => {
 
   const renderEffectMonsterCardData = mapCardsImages(effectMonsterCardData);
   const [matchedCards, setMatchedCards] = useState(renderEffectMonsterCardData);
-  // console.log(effectMonsterCardData);
+  const renderMatchedCards = filteredCardsData(matchedCards);
 
   const indexOfLastCard = currentPage * postPerPage;
   const indexOfFirstCard = indexOfLastCard - postPerPage;
@@ -26,42 +26,25 @@ const EffectMonsterCards = () => {
     indexOfFirstCard,
     indexOfLastCard
   );
-
-  // console.log(inputArea);
-
-  const goToTop = () => window.scrollTo(0, 0);
-
+  
   const handleFilterChange = (e) => {
     let filteredCard = e.target.value;
     setInputArea(filteredCard);
     if (filteredCard === "") {
       setInputArea("");
     }
-
     const filteredCardsList = effectMonsterCardData.filter((card) => {
       return card.name.toLowerCase().includes(filteredCard.toLowerCase());
     });
     setMatchedCards(filteredCardsList);
   };
 
-  const renderMatchedCards = matchedCards.map((card) => (
-    <div className="mapped-cards-container" key={card.id}>
-      <div className="mapped-cards-names">{card.name}</div>
-      <Link to={`${card.id}`}>
-        <img
-          className="map-cards-image"
-          src={card.card_images[0].image_url}
-          alt={card.name}
-        />
-      </Link>
-    </div>
-  ));
-
+  const goToTop = () => window.scrollTo(0, 0);
   if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
     <div className="rendered-mapped-cards-container">
-      <input type="text" onChange={handleFilterChange} />
+      <input className="filter-input-area" type="text" placeholder="Search For Effect Monster Cards" onChange={handleFilterChange} />
       <div className="rendered-mapped-cards">{inputArea === "" ? paginatedCurrentCards : renderMatchedCards}</div>
       {inputArea === "" ? <Pagination
         className="pagination"

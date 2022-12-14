@@ -1,6 +1,11 @@
 .rendered-mapped-cards-container {
   background-image: url(../assets/mappedCardsBackground.jpg);
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .rendered-mapped-cards {
@@ -9,19 +14,38 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   border-radius: 0.2rem;
-  backdrop-filter: blur(4px);
 }
 
 .pagination {
-  backdrop-filter: blur(4px);
   height: 10rem;
   padding-top: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  // backdrop-filter: blur(4px);
 }
 
 .ant-pagination-options-quick-jumper {
   font-size: 1.2rem;
+}
+
+.filter-input-area {
+  background-image: url(../assets/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 40px 40px;
+  margin-top: 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  color: #555;
+  display: block;
+  font-size: 14px;
+  height: 50px;
+  padding: 6px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 30%;
+  text-align: center;
 }
