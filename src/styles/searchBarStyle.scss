@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.searchbar-input {
+.searchbar-input-area {
   background-color: #fff;
   border: 1px solid #ccc;
   background-image: url(../assets/search-icon.svg);
@@ -14,13 +14,15 @@
   background-position: 10px;
   background-size: 30px 30px;
   border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75) inset;
+  outline: none;
   color: #555;
   display: block;
   font-size: 14px;
-  height: 34px;
-  padding: 6px 12px;
+  height: 40px;
+  padding: 6px 12px 6px 50px;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
   width: 50%;
-  text-align: center;
 }

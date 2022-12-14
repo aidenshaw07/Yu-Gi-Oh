@@ -9,8 +9,12 @@ const SearchBar = () => {
     <div className="searchbar-container">
       <input
         type="text"
-        className="searchbar-input"
+        className="searchbar-input-area"
         value={state.searchedCardName}
+        onFocus={(e) => (e.target.placeholder = "")}
+        onBlur={(e) =>
+          (e.target.placeholder = "Search For A Card")
+        }
         onChange={(event) =>
           setFieldState("searchedCardName", event.target.value)
         }
