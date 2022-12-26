@@ -40,7 +40,7 @@ const EffectMonsterCards = () => {
   };
 
   const goToTop = () => window.scrollTo(0, 0);
-  
+
   if (isLoading) return <LoadingOverlay show={isLoading} />;
 
   return (
