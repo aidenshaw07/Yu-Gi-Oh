@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { LoadingOverlay } from "../shared/Loading";
-import "../styles/bannerStyle.scss";
 
 const TopFiveBannerCards = () => {
   const [blueEyesWhiteDragonData, setBlueEyesWhiteDragonData] = useState([]);
