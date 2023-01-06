@@ -14,3 +14,33 @@
     }
   }
 }
+
+.video-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background: black;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.asd {
+  background-image: url(../assets/deneme1.jpg);
+  background-size: 90% 100%;
+  background-repeat: no-repeat;
+  // border: 2px orange solid;
+}
+.asd1 {
+  background-image: url(../assets/deneme.jpg);
+  background-size: 75% 100%;
+  background-repeat: no-repeat;
+  // border: 2px orange solid;
+}

@@ -1,10 +1,12 @@
 .rendered-mapped-cards-container {
-  background-image: url(../assets/mappedCardsBackground.jpg);
+  // background-image: url(../assets/mappedCardsBackground.jpg);
+  background-color: #555;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  backdrop-filter: blur(4px);
 }
 
 .rendered-mapped-cards {
@@ -22,7 +24,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // backdrop-filter: blur(4px);
 }
 
 .ant-pagination-options-quick-jumper {

@@ -2,6 +2,7 @@
   background-image: url(../assets/Slifer.jpg);
   background-size: cover;
   background-attachment: fixed;
+  overflow: auto;
   .monster-cards-child-container {
     display: flex;
     flex-direction: row;
@@ -41,8 +42,14 @@
 }
 
 .monster-cards-header {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   font-size: 3rem;
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
+  -webkit-box-shadow: 0 0 5px 2px #fff;
+  -moz-box-shadow: 0 0 5px 2px #fff;
+  box-shadow: 0 0 15px 10px #fff;
+  border-radius: 5px;
+  width: 30%;
+  margin: 2rem auto;
 }

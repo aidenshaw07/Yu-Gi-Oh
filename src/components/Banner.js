@@ -7,15 +7,22 @@ const Banner = () => {
   return (
     <div>
       <TopFiveBannerCards />
-      <ReactPlayer
-        className="video"
-        playing={true}
-        muted={true}
-        loop={true}
-        controls
-        width="100%"
-        url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
-      />
+      <div className="video-container">
+        <div className="asd">
+          
+        </div>
+        <ReactPlayer
+          className="video"
+          playing={true}
+          muted={true}
+          loop={true}
+          controls
+          url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
+        />
+      <div className="asd1">
+        
+      </div>
+      </div>
       <BottomFiveBannerCards />
     </div>
   );
