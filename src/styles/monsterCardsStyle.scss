@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 5rem 0rem 5rem 0rem;
+    // padding: 5rem 0rem 5rem 0rem;
     .monster-cards-link {
       word-spacing: 100vw;
       text-decoration: none;
@@ -46,10 +46,20 @@
   text-align: center;
   font-size: 3rem;
   font-family: "Courgette", cursive;
-  -webkit-box-shadow: 0 0 5px 2px #fff;
-  -moz-box-shadow: 0 0 5px 2px #fff;
-  box-shadow: 0 0 15px 10px #fff;
+  -webkit-box-shadow: 0 0 5px 2px #1e1e1e;
+  -moz-box-shadow: 0 0 5px 2px #1e1e1e;
+  box-shadow: 0 0 15px 10px #1e1e1e;
+  backdrop-filter: blur(7px);
   border-radius: 5px;
-  width: 30%;
+  width: 40%;
   margin: 2rem auto;
+}
+
+.monster-cards-sub-header {
+  margin-left: 10rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: "Courgette", cursive;
 }

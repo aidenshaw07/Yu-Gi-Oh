@@ -4,7 +4,8 @@ import "../styles/monsterCardsStyle.scss";
 const MonsterCards = () => {
   return (
     <div className="monster-cards-container">
-      <div className="monster-cards-header">Main Deck Types</div>
+      <div className="monster-cards-header">Monster Cards Categories</div>
+      <div className="monster-cards-sub-header">Main Deck Types</div>
       <div className="monster-cards-child-container">
         <Link
           className="monster-cards-link"
@@ -119,7 +120,7 @@ const MonsterCards = () => {
           </h2>
         </Link>
       </div>
-      <div className="monster-cards-header">Extra Deck Types</div>
+      <div className="monster-cards-sub-header">Extra Deck Types</div>
       <div className="monster-cards-child-container">
         <Link
           className="monster-cards-link"

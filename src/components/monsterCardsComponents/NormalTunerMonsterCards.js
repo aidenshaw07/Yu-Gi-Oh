@@ -50,10 +50,10 @@ const NormalTunerMonsterCards = () => {
     <input
       className="filter-input-area"
       type="text"
-      placeholder="Search For Effect Monster Cards"
+      placeholder="Search For Normal Tuner Monster Cards"
       onFocus={(e) => (e.target.placeholder = "")}
       onBlur={(e) =>
-        (e.target.placeholder = "Search For Effect Monster Cards")
+        (e.target.placeholder = "Search For Normal Tuner Monster Cards")
       }
       onChange={handleFilterChange}
     />

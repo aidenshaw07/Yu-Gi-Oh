@@ -2,6 +2,7 @@
   background-image: url(../assets/Ra.jpg);
   background-size: cover;
   background-attachment: fixed;
+  overflow: auto;
   .trap-cards-child-container {
     display: flex;
     flex-direction: row;
@@ -40,8 +41,15 @@
 }
 
 .trap-cards-header {
-    padding: 2rem;
-    text-align: center;
-    font-size: 3rem;
-    font-family: 'Courgette', cursive;
+  padding: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Courgette", cursive;
+  -webkit-box-shadow: 0 0 5px 2px #1e1e1e;
+  -moz-box-shadow: 0 0 5px 2px #1e1e1e;
+  box-shadow: 0 0 15px 10px #1e1e1e;
+  backdrop-filter: blur(7px);
+  border-radius: 5px;
+  width: 40%;
+  margin: 2rem auto;
   }
