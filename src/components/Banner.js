@@ -8,9 +8,7 @@ const Banner = () => {
     <div>
       <TopFiveBannerCards />
       <div className="video-container">
-        <div className="asd">
-          
-        </div>
+        <div className="blue-eyes-image-container"></div>
         <ReactPlayer
           className="video"
           playing={true}
@@ -19,9 +17,7 @@ const Banner = () => {
           controls
           url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
         />
-      <div className="asd1">
-        
-      </div>
+        <div className="dark-magician-image-container"></div>
       </div>
       <BottomFiveBannerCards />
     </div>

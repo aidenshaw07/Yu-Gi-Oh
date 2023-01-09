@@ -1,17 +1,14 @@
 .banner-container {
-  padding: 0.05rem 0;
-  .banner-child-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url("../assets/yugioh.jpg");
-    background-size: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../assets/yugioh.jpg");
+  background-size: 20%;
+  height: 11.5rem;
+  .banner-img-container {
     height: 11.5rem;
-    .banner-img-container {
-      height: 11.5rem;
-      width: 8rem;
-    }
+    width: 8rem;
   }
 }
 
@@ -22,25 +19,25 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background: black;
+  .video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
 }
 
-.video {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+.blue-eyes-image-container {
+  background-image: url(../assets/blueeyes.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.asd {
-  background-image: url(../assets/deneme1.jpg);
-  background-size: 90% 100%;
+.dark-magician-image-container {
+  background-image: url(../assets/darkmagician.jpg);
+  background-size: contain;
   background-repeat: no-repeat;
-  // border: 2px orange solid;
-}
-.asd1 {
-  background-image: url(../assets/deneme.jpg);
-  background-size: 75% 100%;
-  background-repeat: no-repeat;
-  // border: 2px orange solid;
+  background-position: center;
 }

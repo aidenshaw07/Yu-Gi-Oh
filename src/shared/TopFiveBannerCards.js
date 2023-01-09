@@ -110,33 +110,31 @@ const TopFiveBannerCards = () => {
 
   return (
     <div className="banner-container">
-      <div className="banner-child-container">
-        <img
-          className="banner-img-container"
-          src={rightLegOfTheForbiddenOne}
-          alt="asd"
-        />
-        <img
-          className="banner-img-container"
-          src={rightArmOfTheForbiddenOne}
-          alt="asd"
-        />
-        <img
-          className="banner-img-container"
-          src={exodiaTheForbiddenOne}
-          alt="asd"
-        />
-        <img
-          className="banner-img-container"
-          src={leftArmOfTheForbiddenOne}
-          alt="asd"
-        />
-        <img
-          className="banner-img-container"
-          src={leftLegOfTheForbiddenOne}
-          alt="asd"
-        />
-      </div>
+      <img
+        className="banner-img-container"
+        src={rightLegOfTheForbiddenOne}
+        alt="asd"
+      />
+      <img
+        className="banner-img-container"
+        src={rightArmOfTheForbiddenOne}
+        alt="asd"
+      />
+      <img
+        className="banner-img-container"
+        src={exodiaTheForbiddenOne}
+        alt="asd"
+      />
+      <img
+        className="banner-img-container"
+        src={leftArmOfTheForbiddenOne}
+        alt="asd"
+      />
+      <img
+        className="banner-img-container"
+        src={leftLegOfTheForbiddenOne}
+        alt="asd"
+      />
     </div>
   );
 };

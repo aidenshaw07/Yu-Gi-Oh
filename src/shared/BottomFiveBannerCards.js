@@ -100,33 +100,31 @@ const TopFiveBannerCards = () => {
 
   return (
     <div className="banner-container">
-      <div className="banner-child-container">
-        <img
-          className="banner-img-container"
-          src={blueEyesWhiteDragon}
-          alt="Blue Eyes White Dragon"
-        />
-        <img
-          className="banner-img-container"
-          src={blueEyesUltimateDragon}
-          alt="Blue Eyes Ultimate Dragon"
-        />
-        <img
-          className="banner-img-container"
-          src={redEyesBlackDragon}
-          alt="Red Eyes Black Dragon"
-        />
-        <img
-          className="banner-img-container"
-          src={darkPaladin}
-          alt="Dark Paladin"
-        />
-        <img
-          className="banner-img-container"
-          src={darkMagician}
-          alt="Dark Magician"
-        />
-      </div>
+      <img
+        className="banner-img-container"
+        src={blueEyesWhiteDragon}
+        alt="Blue Eyes White Dragon"
+      />
+      <img
+        className="banner-img-container"
+        src={blueEyesUltimateDragon}
+        alt="Blue Eyes Ultimate Dragon"
+      />
+      <img
+        className="banner-img-container"
+        src={redEyesBlackDragon}
+        alt="Red Eyes Black Dragon"
+      />
+      <img
+        className="banner-img-container"
+        src={darkPaladin}
+        alt="Dark Paladin"
+      />
+      <img
+        className="banner-img-container"
+        src={darkMagician}
+        alt="Dark Magician"
+      />
     </div>
   );
 };
