@@ -19,13 +19,12 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background: black;
-  .video {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-  }
+}
+
+.video {
+  grid-area: 1 / 2 / 2 / 3;
+  width: 100%;
+  height: 360px;
 }
 
 .blue-eyes-image-container {
@@ -40,4 +39,22 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media screen and (max-width: 850px) {
+  .blue-eyes-image-container,
+  .dark-magician-image-container {
+    display: none;
+  }
+  .banner-container {
+    display: none;
+  }
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 250px;
+  }
 }

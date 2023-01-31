@@ -1,8 +1,8 @@
 import create from "zustand";
-import { initiaState } from "./initialState";
+import { initialState } from "./initialState";
 
 export const useStore = create((set) => ({
-  ...initiaState,
+  ...initialState,
   setFieldState: (key, value) => {
     set((state) => ({
       ...state,

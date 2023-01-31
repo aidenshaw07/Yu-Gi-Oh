@@ -9,14 +9,13 @@ const Banner = () => {
       <TopFiveBannerCards />
       <div className="video-container">
         <div className="blue-eyes-image-container"></div>
-        <ReactPlayer
+        <iframe
           className="video"
-          playing={true}
-          muted={true}
-          loop={true}
-          controls
-          url="https://www.youtube.com/watch?v=WHUcHw7j2Mc"
-        />
+          src="https://www.youtube.com/embed/WHUcHw7j2Mc?&autoplay=1&loop=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen="true"
+        ></iframe>
         <div className="dark-magician-image-container"></div>
       </div>
       <BottomFiveBannerCards />

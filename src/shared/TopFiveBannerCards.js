@@ -22,9 +22,7 @@ const TopFiveBannerCards = () => {
       const response = await axios.get(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Exodia%20the%20Forbidden%20One"
       );
-      setExodiaTheForbiddenOneData(
-        response.data.data[0].card_images[0].image_url
-      );
+      setExodiaTheForbiddenOneData(response.data.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -37,9 +35,7 @@ const TopFiveBannerCards = () => {
       const response = await axios.get(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Right%20Arm%20Of%20The%20Forbidden%20One"
       );
-      setRightArmOfTheForbiddenOneData(
-        response.data.data[0].card_images[0].image_url
-      );
+      setRightArmOfTheForbiddenOneData(response.data.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -52,9 +48,7 @@ const TopFiveBannerCards = () => {
       const response = await axios.get(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Left%20Arm%20Of%20The%20Forbidden%20One"
       );
-      setLeftArmOfTheForbiddenOneData(
-        response.data.data[0].card_images[0].image_url
-      );
+      setLeftArmOfTheForbiddenOneData(response.data.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -67,9 +61,7 @@ const TopFiveBannerCards = () => {
       const response = await axios.get(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Right%20Leg%20Of%20The%20Forbidden%20One"
       );
-      setRightLegOfTheForbiddenOneData(
-        response.data.data[0].card_images[0].image_url
-      );
+      setRightLegOfTheForbiddenOneData(response.data.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -82,9 +74,7 @@ const TopFiveBannerCards = () => {
       const response = await axios.get(
         "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Left%20Leg%20Of%20The%20Forbidden%20One"
       );
-      setLeftLegOfTheForbiddenOneData(
-        response.data.data[0].card_images[0].image_url
-      );
+      setLeftLegOfTheForbiddenOneData(response.data.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -92,11 +82,16 @@ const TopFiveBannerCards = () => {
     }
   };
 
-  const exodiaTheForbiddenOne = exodiaTheForbiddenOneData;
-  const rightArmOfTheForbiddenOne = rightArmOfTheForbiddenOneData;
-  const leftArmOfTheForbiddenOne = leftArmOfTheForbiddenOneData;
-  const rightLegOfTheForbiddenOne = rightLegOfTheForbiddenOneData;
-  const leftLegOfTheForbiddenOne = leftLegOfTheForbiddenOneData;
+  const exodiaTheForbiddenOne =
+    exodiaTheForbiddenOneData[0]?.card_images[0].image_url;
+  const rightArmOfTheForbiddenOne =
+    rightArmOfTheForbiddenOneData[0]?.card_images[0].image_url;
+  const leftArmOfTheForbiddenOne =
+    leftArmOfTheForbiddenOneData[0]?.card_images[0].image_url;
+  const rightLegOfTheForbiddenOne =
+    rightLegOfTheForbiddenOneData[0]?.card_images[0].image_url;
+  const leftLegOfTheForbiddenOne =
+    leftLegOfTheForbiddenOneData[0]?.card_images[0].image_url;
 
   useEffect(() => {
     getExodiaTheForbiddenOneData();
@@ -113,27 +108,27 @@ const TopFiveBannerCards = () => {
       <img
         className="banner-img-container"
         src={rightLegOfTheForbiddenOne}
-        alt="asd"
+        alt="Right Leg Of The Forbidden One"
       />
       <img
         className="banner-img-container"
         src={rightArmOfTheForbiddenOne}
-        alt="asd"
+        alt="Right Arm Of The Forbidden One"
       />
       <img
         className="banner-img-container"
         src={exodiaTheForbiddenOne}
-        alt="asd"
+        alt="Exodia The Forbidden One"
       />
       <img
         className="banner-img-container"
         src={leftArmOfTheForbiddenOne}
-        alt="asd"
+        alt="Left Arm Of The Forbidden One"
       />
       <img
         className="banner-img-container"
         src={leftLegOfTheForbiddenOne}
-        alt="asd"
+        alt="Left Leg Of The Forbidden One"
       />
     </div>
   );

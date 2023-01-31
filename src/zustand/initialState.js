@@ -1,3 +1,3 @@
-export const initiaState = {
+export const initialState = {
     searchedCardName: "",
 }
