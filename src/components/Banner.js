@@ -1,5 +1,4 @@
 import React from "react";
-import ReactPlayer from "react-player";
 import TopFiveBannerCards from "../shared/TopFiveBannerCards";
 import BottomFiveBannerCards from "../shared/BottomFiveBannerCards";
 

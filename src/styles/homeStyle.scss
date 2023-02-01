@@ -39,7 +39,7 @@
 
 @media screen and (max-width: 1345px) {
   .home-container {
-    height: 70vh;
+    height: 80vh;
   }
   .link-content {
     width: 180px;
@@ -59,14 +59,14 @@
 
 @media screen and (max-width: 650px) {
   .home-container {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-image: url(../assets/home-background-responsive.jpg);
     }
   .link-content {
-    width: 130px;
-    height: 200px;
+    width: 150px;
+    height: 220px;
   }
 }
