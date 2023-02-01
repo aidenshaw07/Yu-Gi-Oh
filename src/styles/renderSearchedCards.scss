@@ -1,18 +1,21 @@
 .searched-cards-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   min-height: 100vh;
-  .searched-cards-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000000;
-    text-shadow: -3px -3px 2px rgba(147, 147, 147, 1);
-  }
+  place-items: center;
+}
+
+.searched-cards-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: -3px -3px 2px rgba(147, 147, 147, 1);
 }
 
 .searched-cards-container::before {
@@ -24,7 +27,17 @@
   left: 0;
   bottom: -5rem;
   right: 0;
-  opacity: 0.7;
+  opacity: 0.6;
+}
+
+.searched-cards-image {
+  width: 25rem;
+  height: 37rem;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .searched-cards-child-container {
@@ -32,24 +45,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  margin-left: -7rem;
+  width: 70%;
   border-radius: 0.2rem;
-backdrop-filter: blur(10px);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-
-}
-
-.searched-cards-image {
-  margin: 1rem;
-  width: 25rem;
-  height: 37rem;
-  border-radius: 0.5rem;
   backdrop-filter: blur(10px);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .searched-cards-desc {
@@ -60,4 +62,43 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   text-align: center;
   font-size: 1rem;
   padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .searched-cards-child-container {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .searched-cards-image {
+    width: 17rem;
+    height: 26rem;
+  }
+  .searched-cards-name {
+    font-size: 1rem;
+  }
+  .searched-cards-desc {
+    font-size: 0.7rem;
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+  .searched-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-size: 100% 100%;
+  }
+  .searched-cards-image {
+    width: 12rem;
+    height: 19rem;
+  }
+  .searched-cards-child-container {
+    width: 50%;
+    margin-left: 0;
+  }
 }

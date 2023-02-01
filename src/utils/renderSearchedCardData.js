@@ -17,11 +17,23 @@ export const renderSearchedCardData = (searchedDataArray) => {
           />
           <div className="searched-cards-child-container">
             <div className="searched-cards-name">{card.name}</div>
-            <p className="searched-cards-desc">Card Type : {card.type}</p>
-            <p className="searched-cards-desc">Card Level : {card.level}</p>
-            <p className="searched-cards-desc">Card Race : {card.race}</p>
             <p className="searched-cards-desc">
-              Card Attribute : {card.attribute}
+              <span style={{ textDecoration: "underline" }}>Card Type :</span>{" "}
+              {card.type}
+            </p>
+            <p className="searched-cards-desc">
+              <span style={{ textDecoration: "underline" }}>Card Level :</span>{" "}
+              {card.level}
+            </p>
+            <p className="searched-cards-desc">
+              <span style={{ textDecoration: "underline" }}>Card Race :</span>{" "}
+              {card.race}
+            </p>
+            <p className="searched-cards-desc">
+              <span style={{ textDecoration: "underline" }}>
+                Card Attribute :
+              </span>{" "}
+              {card.attribute}
             </p>
             <p className="searched-cards-desc">
               Card Description : <br /> {card.desc}
