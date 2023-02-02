@@ -1,6 +1,7 @@
 .rendered-mapped-cards-container {
-  // background-image: url(../assets/mappedCardsBackground.jpg);
-  background-color: #555;
+  background-image: url(../assets/mappedCardsBackground.jpg);
+  // background-color: #555;
+  background-size: cover;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
