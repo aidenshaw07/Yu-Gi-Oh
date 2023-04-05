@@ -4,6 +4,8 @@ https://yugidex.netlify.app/
 
 A simple web app to search for Yu-Gi-Oh! cards. 
 
+![Screenshot 2023-03-26 233913](https://user-images.githubusercontent.com/99930464/230116821-a626be08-0f0d-45fa-ae49-ec9fcc925b81.png)
+
 ### Installation
 
 1. Clone the repo
