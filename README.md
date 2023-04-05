@@ -1,6 +1,7 @@
 ## Yu-Gi-Dex
 
 https://yugidex.netlify.app/
+
 A simple web app to search for Yu-Gi-Oh! cards. 
 
 ### Installation
